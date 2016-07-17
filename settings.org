@@ -1,0 +1,138 @@
+#+TITLE: unmanbearpig's Emacs configuration
+#+AUTHOR: unmanbearpig
+
+* Load packages
+** Package repositories
+  #+BEGIN_SRC emacs-lisp
+  (package-initialize)
+  (require 'package)
+  (add-to-list 'package-archives
+               '("melpa" . "http://melpa.org/packages/") t)
+  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+  (package-initialize)
+  #+END_SRC
+** use-package
+   #+BEGIN_SRC emacs-lisp
+   (require 'use-package)
+   #+END_SRC
+* Appearance
+** Disable menu bar
+   #+BEGIN_SRC emacs-lisp
+   (menu-bar-mode -1)
+   #+END_SRC
+* Key bindings
+** C-h like in shell
+   Use "C-c h" for help
+   #+BEGIN_SRC emacs-lisp
+   (define-key key-translation-map [?\C-h] [?\C-?])
+   (global-set-key (kbd "C-c h") 'help-command)
+   #+END_SRC
+** Navigation
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "M-p") 'backward-paragraph)
+   (global-set-key (kbd "M-n") 'forward-paragraph)
+
+   (global-set-key (kbd "M-<up>") 'backward-paragraph)
+   (global-set-key (kbd "M-<down>") 'forward-paragraph)
+   #+END_SRC
+** Comment-uncomment region
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-c C-d") 'comment-region)
+   (global-set-key (kbd "C-c C-u") 'uncomment-region)
+   #+END_SRC
+** Org mode
+*** Org babel languages
+   Stolen from https://github.com/danielmai/.emacs.d/blob/master/config.org
+   #+BEGIN_SRC emacs-lisp
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)
+   (C . t)
+   (calc . t)
+   (latex . t)
+   (java . t)
+   (ruby . t)
+   (lisp . t)
+   (scheme . t)
+   (sh . t)
+   (sqlite . t)
+   (js . t)))
+
+(defun my-org-confirm-babel-evaluate (lang body)
+  "Do not confirm evaluation for these languages."
+  (not (or (string= lang "C")
+           (string= lang "java")
+           (string= lang "python")
+           (string= lang "emacs-lisp")
+           (string= lang "sqlite"))))
+(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+#+END_SRC
+*** Org babel/source blocks
+    I like to have source blocks properly syntax highlighted and with the
+    editing popup window staying within the same window so all the windows
+    don't jump around. Also, having the top and bottom trailing lines in
+    the block is a waste of space, so we can remove them.
+    
+    I noticed that fontification doesn't work with markdown mode when the
+    block is indented after editing it in the org src buffer---the leading
+    #s for headers don't get fontified properly because they appear as Org
+    comments. Setting ~org-src-preserve-indentation~ makes things
+    consistent as it doesn't pad source blocks with leading spaces.
+    
+    #+BEGIN_SRC emacs-lisp
+    (setq org-src-fontify-natively t
+      org-src-window-setup 'current-window
+      org-src-strip-leading-and-trailing-blank-lines t
+      org-src-preserve-indentation t
+      org-src-tab-acts-natively t)
+    #+END_SRC
+* Packages
+** Helm
+  #+BEGIN_SRC emacs-lisp
+(use-package helm
+  :ensure t
+  :diminish helm-mode
+  :bind (("M-x" . helm-M-x)
+	 ("C-x C-f" . helm-find-files)
+	 ("C-x b" . helm-buffers-list)
+	 ("C-c r" . helm-recentf)
+	 ("C-c C-c M-x" . execute-extended-command)
+	 :map helm-map 
+	 ("TAB" . helm-execute-persistent-action)
+	 ("C-z" . helm-select-action))
+  :config (progn
+	    (require 'helm-config))
+)
+  #+END_SRC
+*** Remap helm bindings, not sure why 
+   #+BEGIN_SRC emacs-lisp
+   ;; (define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
+   ;; (define-key helm-map (kbd "C-z") 'helm-select-action)
+   #+END_SRC
+    
+** Projectile
+   #+BEGIN_SRC emacs-lisp
+   (use-package projectile
+     :config
+     (dolist (filename '("Rakefile" "CHANGELOG.md" "LICENSE" "README.md" "README.rdoc" "LICENSE.md"))
+       (add-to-list 'projectile-project-root-files filename t))
+   )
+   #+END_SRC
+
+** helm-projectile
+   #+BEGIN_SRC emacs-lisp
+   (use-package helm-projectile
+     :bind ("C-x " . helm-projectile)
+   )
+   #+END_SRC** Ag
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "M-s p") 'helm-projectile-ag)
+   (global-set-key (kbd "M-s a") 'helm-ag)
+   #+END_SRC
+
+** Swiper
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "M-s M-s") 'swiper)
+   (global-set-key (kbd "M-s s") 'swiper-helm)
+   (global-set-key (kbd "M-s M-o") 'helm-occur)
+   #+END_SRC
