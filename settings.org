@@ -392,7 +392,7 @@
    (use-package hydra
      :ensure t)
    #+END_SRC
-* Languages
+* TODO Languages
 ** sass/scss
 ** web-mode
 ** rust
@@ -406,9 +406,20 @@
 *** yaml-mode
 ** markdown
 *** markdown-mode
+** javascript
+   (autoload 'js2-mode "js2-mode" nil t)
+   (add-to-list 'auto-mode-alist '("\\.js$" . js-jsx-mode))
+   (add-to-list 'auto-mode-alist '("\\.es6$" . js2-mode))
 ** json
 *** json-mode
 ** coffee mode
+* TODO Snippets
+  (yas-global-mode)
+  (setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"))
+
+  (yas-reload-all)
+
 * Not sure
 ** smartparens
 ** restclient
@@ -422,3 +433,5 @@
 ** smart-mode-line
 ** atom-dark-theme
 ** adaptive-wrap
+** auto-complete
+   use at all? something else?
