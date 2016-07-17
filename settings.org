@@ -24,59 +24,8 @@
    #+BEGIN_SRC emacs-lisp
    (show-paren-mode 1)
    #+END_SRC
-* Key bindings
-** C-h like in shell
-   Use "C-c h" for help
-   #+BEGIN_SRC emacs-lisp
-   (define-key key-translation-map [?\C-h] [?\C-?])
-   (global-set-key (kbd "C-c h") 'help-command)
-   #+END_SRC
-** M-h to kill word
-   #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "M-h") 'backward-kill-word)
-   #+END_SRC
-** Toggle line wrapping
-   #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "C-x w") 'visual-line-mode)
-   #+END_SRC
-** Indent buffer
-   #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "<backtab>") 'indent-buffer)
-   #+END_SRC
-** Search and replace
-   #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "C-x M-r") 'replace-string)
-   (global-set-key (kbd "C-x M-C-r") 'replace-regexp)
-   #+END_SRC
-** Kill current buffer 
-   #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "C-x k") '(lambda () "Kill current buffer"
-                                 (interactive)
-                                 (kill-buffer nil)))
-   #+END_SRC
-** Navigation
-   #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "M-p") 'backward-paragraph)
-   (global-set-key (kbd "M-n") 'forward-paragraph)
-
-   (global-set-key (kbd "M-<up>") 'backward-paragraph)
-   (global-set-key (kbd "M-<down>") 'forward-paragraph)
-   #+END_SRC
-** Comment-uncomment region
-   #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "C-c C-d") 'comment-region)
-   (global-set-key (kbd "C-c C-u") 'uncomment-region)
-   #+END_SRC
-** Switch to previous buffer
-   Switches between previous and current buffer without any prompts
-   #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "C-x C-b")
-                (lambda ()
-                  (interactive)
-                  (switch-to-buffer nil)))
-   #+END_SRC
-** Org mode
-*** Org babel languages
+* Org mode
+** Org babel languages
    Stolen from https://github.com/danielmai/.emacs.d/blob/master/config.org
    #+BEGIN_SRC emacs-lisp
 (org-babel-do-load-languages
@@ -102,25 +51,90 @@
            (string= lang "sqlite"))))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 #+END_SRC
-*** Org babel/source blocks
-    I like to have source blocks properly syntax highlighted and with the
-    editing popup window staying within the same window so all the windows
-    don't jump around. Also, having the top and bottom trailing lines in
-    the block is a waste of space, so we can remove them.
-    
-    I noticed that fontification doesn't work with markdown mode when the
-    block is indented after editing it in the org src buffer---the leading
-    #s for headers don't get fontified properly because they appear as Org
-    comments. Setting ~org-src-preserve-indentation~ makes things
-    consistent as it doesn't pad source blocks with leading spaces.
-    
-    #+BEGIN_SRC emacs-lisp
-    (setq org-src-fontify-natively t
-      org-src-window-setup 'current-window
-      org-src-strip-leading-and-trailing-blank-lines t
-      org-src-preserve-indentation t
-      org-src-tab-acts-natively t)
-    #+END_SRC
+** Org babel/source blocks
+   I like to have source blocks properly syntax highlighted and with the
+   editing popup window staying within the same window so all the windows
+   don't jump around. Also, having the top and bottom trailing lines in
+   the block is a waste of space, so we can remove them.
+   
+   I noticed that fontification doesn't work with markdown mode when the
+   block is indented after editing it in the org src buffer---the leading
+   #s for headers don't get fontified properly because they appear as Org
+   comments. Setting ~org-src-preserve-indentation~ makes things
+   consistent as it doesn't pad source blocks with leading spaces.
+   
+   #+BEGIN_SRC emacs-lisp
+   (setq org-src-fontify-natively t
+     org-src-window-setup 'current-window
+     org-src-strip-leading-and-trailing-blank-lines t
+     org-src-preserve-indentation t
+     org-src-tab-acts-natively t)
+   #+END_SRC
+
+* Window and buffer management
+** Kill current buffer 
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-x k") '(lambda () "Kill current buffer"
+                                 (interactive)
+                                 (kill-buffer nil)))
+   #+END_SRC
+** Switch to previous buffer
+   Switches between previous and current buffer without any prompts
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-x C-b")
+                (lambda ()
+                  (interactive)
+                  (switch-to-buffer nil)))
+   #+END_SRC
+** Delete buffer file
+   Deletes current buffer's file
+   #+BEGIN_SRC emacs-lisp
+(defun delete-buffer-file ()
+  (interactive)
+  (delete-file (buffer-file-name))
+  (kill-buffer))
+   #+END_SRC
+* Editing 
+** Search and replace
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-x M-r") 'replace-string)
+   (global-set-key (kbd "C-x M-C-r") 'replace-regexp)
+   #+END_SRC
+** C-h like in shell
+   Use "C-c h" for help
+   #+BEGIN_SRC emacs-lisp
+   (define-key key-translation-map [?\C-h] [?\C-?])
+   (global-set-key (kbd "C-c h") 'help-command)
+   #+END_SRC
+** M-h to kill word
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "M-h") 'backward-kill-word)
+   #+END_SRC
+** Toggle line wrapping
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-x w") 'visual-line-mode)
+   #+END_SRC
+** Indent buffer
+   #+BEGIN_SRC emacs-lisp
+(defun indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max) nil))
+
+   (global-set-key (kbd "<backtab>") 'indent-buffer)
+   #+END_SRC
+** Comment-uncomment region
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-c C-d") 'comment-region)
+   (global-set-key (kbd "C-c C-u") 'uncomment-region)
+   #+END_SRC
+* Navigation
+  #+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "M-p") 'backward-paragraph)
+  (global-set-key (kbd "M-n") 'forward-paragraph)
+
+  (global-set-key (kbd "M-<up>") 'backward-paragraph)
+  (global-set-key (kbd "M-<down>") 'forward-paragraph)
+  #+END_SRC
 * OS Specific
 ** OS X
    #+BEGIN_SRC emacs-lisp
