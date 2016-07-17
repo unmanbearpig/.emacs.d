@@ -138,6 +138,10 @@
    (setq-default indent-tabs-mode nil)
    (setq indent-tabs-mode nil)
    #+END_SRC
+** Delete trailing whitespace on save
+   #+BEGIN_SRC emacs-lisp
+   (add-hook 'before-save-hook 'delete-trailing-whitespace)
+   #+END_SRC
 ** Indent buffer
    #+BEGIN_SRC emacs-lisp
 (defun indent-buffer ()
