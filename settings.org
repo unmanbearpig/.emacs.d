@@ -20,6 +20,10 @@
    #+BEGIN_SRC emacs-lisp
    (menu-bar-mode -1)
    #+END_SRC
+** Show parens
+   #+BEGIN_SRC emacs-lisp
+   (show-paren-mode 1)
+   #+END_SRC
 * Key bindings
 ** C-h like in shell
    Use "C-c h" for help
