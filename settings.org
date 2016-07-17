@@ -15,6 +15,11 @@
    #+BEGIN_SRC emacs-lisp
    (require 'use-package)
    #+END_SRC
+* Defaults
+** Revert tags without query
+   #+BEGIN_SRC emacs-lisp
+   (setq tags-revert-without-query 1)
+   #+END_SRC
 * Appearance
 ** Disable menu bar
    #+BEGIN_SRC emacs-lisp
@@ -23,6 +28,10 @@
 ** Show parens
    #+BEGIN_SRC emacs-lisp
    (show-paren-mode 1)
+   #+END_SRC
+** Show size of the buffer
+   #+BEGIN_SRC emacs-lisp
+   (setq size-indication-mode t)
    #+END_SRC
 * Org mode
 ** Org babel languages
@@ -56,13 +65,13 @@
    editing popup window staying within the same window so all the windows
    don't jump around. Also, having the top and bottom trailing lines in
    the block is a waste of space, so we can remove them.
-   
+
    I noticed that fontification doesn't work with markdown mode when the
    block is indented after editing it in the org src buffer---the leading
    #s for headers don't get fontified properly because they appear as Org
    comments. Setting ~org-src-preserve-indentation~ makes things
    consistent as it doesn't pad source blocks with leading spaces.
-   
+
    #+BEGIN_SRC emacs-lisp
    (setq org-src-fontify-natively t
      org-src-window-setup 'current-window
@@ -117,7 +126,7 @@
   (delete-file (buffer-file-name))
   (kill-buffer))
    #+END_SRC
-** Truncate lines by default 
+** Truncate lines by default
    #+BEGIN_SRC emacs-lisp
    (setq-default truncate-lines t)
    #+END_SRC
@@ -126,7 +135,7 @@
    (global-set-key (kbd "C-x w") 'visual-line-mode)
    #+END_SRC
 
-* Editing 
+* Editing
 ** Indent with 2 spaces
    #+BEGIN_SRC emacs-lisp
    (setq-default tab-width 2)
@@ -191,7 +200,7 @@
 	 ("C-c r" . helm-recentf)
          ("M-s M-o" . helm-occur)
 	 ("C-c C-c M-x" . execute-extended-command)
-	 :map helm-map 
+	 :map helm-map
 	 ("TAB" . helm-execute-persistent-action)
 	 ("C-z" . helm-select-action))
   :config (progn
@@ -199,12 +208,12 @@
             (helm-mode t))
 )
   #+END_SRC
-*** Remap helm bindings, not sure why 
+*** Remap helm bindings, not sure why
    #+BEGIN_SRC emacs-lisp
    ;; (define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
    ;; (define-key helm-map (kbd "C-z") 'helm-select-action)
    #+END_SRC
-    
+
 ** Projectile
    #+BEGIN_SRC emacs-lisp
    (use-package projectile
@@ -220,7 +229,7 @@
 
 ** helm-projectile
    #+BEGIN_SRC emacs-lisp
-   (use-package helm-projectile 
+   (use-package helm-projectile
      :ensure t
      :bind ("M-s p" . helm-projectile-ag))
    #+END_SRC
@@ -246,7 +255,7 @@
    #+BEGIN_SRC emacs-lisp
    (recentf-mode 1)
    #+END_SRC
-** Enable narrow to region 
+** Enable narrow to region
    #+BEGIN_SRC emacs-lisp
    (put 'narrow-to-region 'disabled nil)
    #+END_SRC
@@ -273,7 +282,7 @@
 (use-package magit
   :ensure t
   :config
-  (progn 
+  (progn
     (setq magit-status-buffer-switch-function (quote switch-to-buffer))
     (setq magit-save-repository-buffers "dontask"))
 )
@@ -306,4 +315,3 @@
    (use-package hydra
      :ensure t)
    #+END_SRC
-
