@@ -133,6 +133,11 @@
    (setq tab-width 2)
    (setq standard-indent 2)
    #+END_SRC
+** Replace tabs with spaces
+   #+BEGIN_SRC emacs-lisp
+   (setq-default indent-tabs-mode nil)
+   (setq indent-tabs-mode nil)
+   #+END_SRC
 ** Indent buffer
    #+BEGIN_SRC emacs-lisp
 (defun indent-buffer ()
