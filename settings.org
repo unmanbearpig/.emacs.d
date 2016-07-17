@@ -149,6 +149,29 @@
   ("i" vc-register)
   ("d" magit-diff))
     #+END_SRC
+*** Window management
+    #+BEGIN_SRC emacs-lisp
+(defhydra hydra-window (global-map "C-c w")
+  "manipulate windows"
+  ("0" delete-window)
+  ("k" (kill-buffer nil))
+  ("2" split-window-below)
+  ("2" split-window-below)
+  ("3" split-window-right)
+  ("+" balance-windows)
+  ("o" other-window)
+  ("x" delete-window)
+  ("H" (shrink-window-horizontally 8))
+  ("S" (enlarge-window-horizontally 8))
+  ("h" (shrink-window-horizontally 20))
+  ("s" (enlarge-window-horizontally 20))
+  ("T" (shrink-window 2))
+  ("N" (enlarge-window 2))
+  ("t" (shrink-window 10))
+  ("n" (enlarge-window 10))
+  ("," (winner-undo))
+  ("." (winner-redo)))
+    #+END_SRC
 ** Helm
   #+BEGIN_SRC emacs-lisp
 (use-package helm
