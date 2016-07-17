@@ -330,6 +330,8 @@
    )
    #+END_SRC
 
+** TODO gitignore mode
+** TODO git timemachine
 * OS Specific
 ** OS X
    #+BEGIN_SRC emacs-lisp
@@ -349,3 +351,33 @@
    (use-package hydra
      :ensure t)
    #+END_SRC
+* Languages
+** sass/scss
+** web-mode
+** rust
+** ruby
+*** rvm (not sure)
+*** rspec-mode
+*** ruby-hash-syntax
+*** rubocop
+**** (not sure) ruby-electric
+** yaml
+*** yaml-mode
+** markdown
+*** markdown-mode
+** json
+*** json-mode
+** coffee mode
+* Not sure
+** smartparens
+** restclient
+** persp-projectile
+** paredit
+** magit-filenotify
+** helm-flycheck
+** exec-path-from-shell
+** auto-indent-mode
+** anzu
+** smart-mode-line
+** atom-dark-theme
+** adaptive-wrap
