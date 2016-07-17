@@ -131,12 +131,14 @@
 	 ("C-x C-f" . helm-find-files)
 	 ("C-x b" . helm-buffers-list)
 	 ("C-c r" . helm-recentf)
+         ("M-s M-o" . helm-occur)
 	 ("C-c C-c M-x" . execute-extended-command)
 	 :map helm-map 
 	 ("TAB" . helm-execute-persistent-action)
 	 ("C-z" . helm-select-action))
   :config (progn
-	    (require 'helm-config))
+	    (require 'helm-config)
+            (helm-mode t))
 )
   #+END_SRC
 *** Remap helm bindings, not sure why 
