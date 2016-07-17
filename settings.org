@@ -150,9 +150,11 @@
 ** Projectile
    #+BEGIN_SRC emacs-lisp
    (use-package projectile
+     :ensure t
      :config
-     (dolist (filename '("Rakefile" "CHANGELOG.md" "LICENSE" "README.md" "README.rdoc" "LICENSE.md"))
-       (add-to-list 'projectile-project-root-files filename t))
+     (progn (dolist (filename '("Rakefile" "CHANGELOG.md" "LICENSE" "README.md" "README.rdoc" "LICENSE.md"))
+              (add-to-list 'projectile-project-root-files filename t))
+            (projectile-global-mode))
    )
    #+END_SRC
 
