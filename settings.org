@@ -31,6 +31,10 @@
    (define-key key-translation-map [?\C-h] [?\C-?])
    (global-set-key (kbd "C-c h") 'help-command)
    #+END_SRC
+** M-h to kill word
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "M-h") 'backward-kill-word)
+   #+END_SRC
 ** Toggle line wrapping
    #+BEGIN_SRC emacs-lisp
    (global-set-key (kbd "C-x w") 'visual-line-mode)
