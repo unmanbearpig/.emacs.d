@@ -49,7 +49,7 @@
    (global-set-key (kbd "C-x M-C-r") 'replace-regexp)
    #+END_SRC
 ** Kill current buffer 
-   #+BEGIN_SRC 
+   #+BEGIN_SRC emacs-lisp
    (global-set-key (kbd "C-x k") '(lambda () "Kill current buffer"
                                  (interactive)
                                  (kill-buffer nil)))
