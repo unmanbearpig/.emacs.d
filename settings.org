@@ -31,6 +31,25 @@
    (define-key key-translation-map [?\C-h] [?\C-?])
    (global-set-key (kbd "C-c h") 'help-command)
    #+END_SRC
+** Toggle line wrapping
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-x w") 'visual-line-mode)
+   #+END_SRC
+** Indent buffer
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "<backtab>") 'indent-buffer)
+   #+END_SRC
+** Search and replace
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-x M-r") 'replace-string)
+   (global-set-key (kbd "C-x M-C-r") 'replace-regexp)
+   #+END_SRC
+** Kill current buffer 
+   #+BEGIN_SRC 
+   (global-set-key (kbd "C-x k") '(lambda () "Kill current buffer"
+                                 (interactive)
+                                 (kill-buffer nil)))
+   #+END_SRC
 ** Navigation
    #+BEGIN_SRC emacs-lisp
    (global-set-key (kbd "M-p") 'backward-paragraph)
