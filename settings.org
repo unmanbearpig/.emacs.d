@@ -67,6 +67,14 @@
    (global-set-key (kbd "C-c C-d") 'comment-region)
    (global-set-key (kbd "C-c C-u") 'uncomment-region)
    #+END_SRC
+** Switch to previous buffer
+   Switches between previous and current buffer without any prompts
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-x C-b")
+                (lambda ()
+                  (interactive)
+                  (switch-to-buffer nil)))
+   #+END_SRC
 ** Org mode
 *** Org babel languages
    Stolen from https://github.com/danielmai/.emacs.d/blob/master/config.org
