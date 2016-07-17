@@ -163,7 +163,7 @@
     #+END_SRC
 *** Window management
     #+BEGIN_SRC emacs-lisp
-(defhydra hydra-window (global-map "C-c w")
+    (defhydra hydra-window (global-map "C-c w")
   "manipulate windows"
   ("0" delete-window)
   ("k" (kill-buffer nil))
@@ -213,6 +213,7 @@
    #+BEGIN_SRC emacs-lisp
    (use-package projectile
      :ensure t
+     :diminish projectile-mode
      :config
      (progn (dolist (filename '("Rakefile" "CHANGELOG.md" "LICENSE" "README.md" "README.rdoc" "LICENSE.md"))
               (add-to-list 'projectile-project-root-files filename t))
@@ -222,18 +223,45 @@
 
 ** helm-projectile
    #+BEGIN_SRC emacs-lisp
-   (use-package helm-projectile
-     :bind ("C-x " . helm-projectile)
-   )
-   #+END_SRC** Ag
-   #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "M-s p") 'helm-projectile-ag)
-   (global-set-key (kbd "M-s a") 'helm-ag)
+   (use-package helm-projectile 
+     :ensure t
+     :bind ("M-s p" . helm-projectile-ag))
    #+END_SRC
-
+** helm-ag
+   #+BEGIN_SRC emacs-lisp
+   (use-package ag
+     :ensure t
+     :config
+     (use-package helm-ag
+       :ensure t
+       :bind ("M-s a" . helm-ag)))
+   #+END_SRC
 ** Swiper
    #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "M-s M-s") 'swiper)
-   (global-set-key (kbd "M-s s") 'swiper-helm)
-   (global-set-key (kbd "M-s M-o") 'helm-occur)
+   (use-package swiper
+     :ensure t
+     :bind (("M-s M-s" . swiper))
+   )
+
+   #+END_SRC
+** Magit
+   #+BEGIN_SRC emacs-lisp
+(use-package magit
+  :ensure t
+  :config
+  (progn 
+    (setq magit-status-buffer-switch-function (quote switch-to-buffer))
+    (setq magit-save-repository-buffers "dontask"))
+)
+   #+END_SRC
+
+*** TODO bindings
+
+** Git gutter
+   #+BEGIN_SRC emacs-lisp
+   (use-package git-gutter+
+    :ensure t
+    :config
+    (global-git-gutter+-mode t)
+   )
    #+END_SRC
