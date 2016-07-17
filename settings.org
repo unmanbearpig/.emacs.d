@@ -118,6 +118,7 @@
         (setq exec-path (append '("/opt/local/bin" "/opt/local/sbin" "/usr/local/bin") exec-path))
         (use-package osx-clipboard
           :ensure t
+          :diminish osx-clipboard-mode
           :config
           (osx-clipboard-mode +1))))
    #+END_SRC
