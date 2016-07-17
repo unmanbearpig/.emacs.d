@@ -1,0 +1,8 @@
+# -*- mode: ruby; require-final-newline: nil; backup-inhibited: t -*-
+#name: gem pry
+# --
+gem 'pry'
+gem 'pry-rails'
+gem 'pry-stack_explorer'
+gem 'pry-byebug'
+gem 'pry-doc'

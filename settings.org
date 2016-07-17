@@ -413,13 +413,25 @@
 ** json
 *** json-mode
 ** coffee mode
-* TODO Snippets
+* Snippets
+  #+BEGIN_SRC emacs-lisp
+  (use-package yasnippet
+    :ensure t
+    :config
+    (progn
+      (yas-global-mode)
+      (setq yas-snippet-dirs
+        '("~/.emacs.d/snippets"))
+      (yas-reload-all))
+  )
+  #+END_SRC
+
   (yas-global-mode)
   (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"))
 
   (yas-reload-all)
-** Wrap things with tags
+** TODO Wrap things with tags
    https://stackoverflow.com/questions/1558178/wrap-selection-in-open-close-tag-like-textmate
 
    #+BEGIN_SRC stack-overflow
