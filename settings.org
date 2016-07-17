@@ -127,6 +127,12 @@
    #+END_SRC
 
 * Editing 
+** Indent with 2 spaces
+   #+BEGIN_SRC emacs-lisp
+   (setq-default tab-width 2)
+   (setq tab-width 2)
+   (setq standard-indent 2)
+   #+END_SRC
 ** Indent buffer
    #+BEGIN_SRC emacs-lisp
 (defun indent-buffer ()
@@ -230,6 +236,10 @@
 ** Recentf
    #+BEGIN_SRC emacs-lisp
    (recentf-mode 1)
+   #+END_SRC
+** Enable narrow to region 
+   #+BEGIN_SRC emacs-lisp
+   (put 'narrow-to-region 'disabled nil)
    #+END_SRC
 * Version control
 ** Hydra
