@@ -123,6 +123,28 @@
           (osx-clipboard-mode +1))))
    #+END_SRC
 * Packages
+** Hydra
+   #+BEGIN_SRC emacs-lisp
+   (use-package hydra
+     :ensure t)
+   #+END_SRCn
+*** Version control
+    #+BEGIN_SRC emacs-lisp
+(defhydra hydra-vc (global-map "C-x v")
+  "Version control"
+  ("n" git-gutter+-next-hunk)
+  ("p" git-gutter+-previous-hunk)
+  ("v" magit-status)
+  ("s" git-gutter+-stage-hunks)
+  ("u" git-gutter+-unstage-whole-buffer)
+  ("k" git-gutter+-revert-hunks)
+  ("l" magit-log-current)
+  ("c" magit-commit)
+  ("a" magit-commit-amend)
+  ("P" magit-push :exit t)
+  ("i" vc-register)
+  ("d" magit-diff))
+    #+END_SRC
 ** Helm
   #+BEGIN_SRC emacs-lisp
 (use-package helm
