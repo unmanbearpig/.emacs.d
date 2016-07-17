@@ -109,6 +109,18 @@
       org-src-preserve-indentation t
       org-src-tab-acts-natively t)
     #+END_SRC
+* OS Specific
+** OS X
+   #+BEGIN_SRC emacs-lisp
+   (if (eq system-type 'darwin)
+    (progn
+        (setenv "PATH" (concat "/opt/local/bin:/opt/local/sbin:/usr/local/bin:" (getenv "PATH")))
+        (setq exec-path (append '("/opt/local/bin" "/opt/local/sbin" "/usr/local/bin") exec-path))
+        (use-package osx-clipboard
+          :ensure t
+          :config
+          (osx-clipboard-mode +1))))
+   #+END_SRC
 * Packages
 ** Helm
   #+BEGIN_SRC emacs-lisp
