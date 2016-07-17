@@ -54,10 +54,40 @@
       `((".*" ,temporary-file-directory t)))
 ;;;;;
    #+END_SRC
+** Fix unicode in terminal
+   Not sure if I actually need it.
+   #+BEGIN_SRC emacs-lisp
+   (add-hook 'term-exec-hook
+          (function
+           (lambda ()
+             (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))))
+   #+END_SRC
 * Appearance
 ** Disable menu bar
    #+BEGIN_SRC emacs-lisp
    (menu-bar-mode -1)
+   #+END_SRC
+** Inhibit startup message
+   #+BEGIN_SRC emacs-lisp
+   (setq inhibit-startup-message t)
+   #+END_SRC
+** Hide scroll bar
+   #+BEGIN_SRC emacs-lisp
+(if (boundp 'toggle-scroll-bar)
+    (toggle-scroll-bar -1))
+   #+END_SRC
+** Hide toolbar
+   #+BEGIN_SRC emacs-lisp
+   (if window-system
+    (tool-bar-mode -1))
+   #+END_SRC
+** Disable bell
+   #+BEGIN_SRC emacs-lisp
+   (setq ring-bell-function 'ignore)
+   #+END_SRC
+** Set font
+   #+BEGIN_SRC emacs-lisp
+   (set-frame-font "-*-Source Code Pro-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
    #+END_SRC
 ** Show parens
    #+BEGIN_SRC emacs-lisp
@@ -66,6 +96,17 @@
 ** Show size of the buffer
    #+BEGIN_SRC emacs-lisp
    (setq size-indication-mode t)
+   #+END_SRC
+** Show line and column number
+   #+BEGIN_SRC emacs-lisp
+   (line-number-mode 1)    ; makes the line number show up
+   (column-number-mode 1)  ; makes the column number show up
+   #+END_SRC
+** Highlight line in certain modes
+   #+BEGIN_SRC emacs-lisp
+   ;; highlight line in package list and compilation mode
+   (add-hook 'package-menu-mode-hook 'hl-line-mode)
+   (add-hook 'compilation-mode-hook 'hl-line-mode)
    #+END_SRC
 * Org mode
 ** Org babel languages
