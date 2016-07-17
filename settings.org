@@ -117,6 +117,10 @@
   (delete-file (buffer-file-name))
   (kill-buffer))
    #+END_SRC
+** Truncate lines by default 
+   #+BEGIN_SRC emacs-lisp
+   (setq-default truncate-lines t)
+   #+END_SRC
 ** Toggle line wrapping
    #+BEGIN_SRC emacs-lisp
    (global-set-key (kbd "C-x w") 'visual-line-mode)
