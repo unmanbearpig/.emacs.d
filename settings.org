@@ -435,3 +435,4 @@
 ** adaptive-wrap
 ** auto-complete
    use at all? something else?
+* TODO Flycheck/flyspell
