@@ -122,6 +122,10 @@
           :config
           (osx-clipboard-mode +1))))
    #+END_SRC
+* Recentf
+  #+BEGIN_SRC emacs-lisp
+  (recentf-mode 1)
+  #+END_SRC
 * Packages
 ** Hydra
    #+BEGIN_SRC emacs-lisp
