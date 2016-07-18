@@ -406,6 +406,9 @@
 *** inf-ruby
     (use-package inf-ruby :ensure t)
 *** rvm (not sure)
+    #+BEGIN_SRC emacs-lisp
+    (use-package rvm :ensure t)
+    #+END_SRC
 *** rspec-mode
     #+BEGIN_SRC emacs-lisp
     (use-package rspec-mode
