@@ -403,6 +403,8 @@
 ** web-mode
 ** rust
 ** ruby
+*** inf-ruby
+    (use-package inf-ruby :ensure t)
 *** rvm (not sure)
 *** rspec-mode
     #+BEGIN_SRC emacs-lisp
