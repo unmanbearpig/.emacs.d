@@ -409,7 +409,18 @@
 *** rspec-mode
     #+BEGIN_SRC emacs-lisp
     (use-package rspec-mode
-      :ensure t)
+      :ensure t
+      :config
+      (progn
+        (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+        (add-hook 'web-mode-hook 'rspec-verifiable-mode)
+        (setq compilation-scroll-output nil)
+
+        (setq rspec-command-options "--format documentation --order rand -p 3")
+        (setq rspec-expose-dsl-globally t)
+        (setq rspec-use-bundler-when-possible nil)
+        (setq rspec-use-rake-when-possible nil)
+        (setq rspec-use-rvm t)))
     #+END_SRC
 *** ruby-hash-syntax
 *** rubocop
