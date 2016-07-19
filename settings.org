@@ -76,6 +76,10 @@
      kept-old-versions 2
      version-control t)       ; use versioned backups
    #+END_SRC
+** Subword mode
+   #+BEGIN_SRC emacs-lisp
+(global-subword-mode t)
+   #+END_SRC
 * Appearance
 ** Disable menu bar
    #+BEGIN_SRC emacs-lisp
