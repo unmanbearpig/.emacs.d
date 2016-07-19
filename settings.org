@@ -433,7 +433,13 @@
         (setq rspec-expose-dsl-globally t)
         (setq rspec-use-bundler-when-possible nil)
         (setq rspec-use-rake-when-possible nil)
-        (setq rspec-use-rvm t)))
+        (setq rspec-use-rvm t)
+
+        (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+        (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+        (add-to-list 'auto-mode-alist '("capfile$" . ruby-mode))
+        (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+        (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))))
     #+END_SRC
 *** ruby-hash-syntax
 *** rubocop
