@@ -280,7 +280,9 @@
 	 ("C-z" . helm-select-action))
   :config (progn
 	    (require 'helm-config)
-      (helm-mode t))
+      (helm-mode t)
+    (add-to-list 'helm-completing-read-handlers-alist
+     '(dired . nil)))
 )
   #+END_SRC
 *** Remap helm bindings, not sure why
@@ -288,12 +290,6 @@
    ;; (define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
    ;; (define-key helm-map (kbd "C-z") 'helm-select-action)
    #+END_SRC
-
-*** Disable helm for dired
-    #+BEGIN_SRC emacs-lisp
-    (add-to-list 'helm-completing-read-handlers-alist
-     '(dired . nil))
-    #+END_SRC
 
 ** Projectile
    #+BEGIN_SRC emacs-lisp
