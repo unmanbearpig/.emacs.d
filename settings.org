@@ -524,6 +524,13 @@
 ** smart-mode-line
 ** atom-dark-theme
 ** adaptive-wrap
+   #+BEGIN_SRC emacs-lisp
+   (use-package adaptive-wrap
+     :config
+     (progn
+       (add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode))
+       (add-hook 'org-mode-hook 'adaptive-wrap-prefix-mode))
+   #+END_SRC
 ** auto-complete
    use at all? something else?
 * TODO Flycheck/flyspell
