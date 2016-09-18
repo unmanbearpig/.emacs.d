@@ -317,11 +317,11 @@
 * Navigation
 ** Backward and forward paragraph
    #+BEGIN_SRC emacs-lisp
-   (global-set-key (kbd "M-p") 'backward-paragraph)
-   (global-set-key (kbd "M-n") 'forward-paragraph)
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
 
-   (global-set-key (kbd "M-<up>") 'backward-paragraph)
-   (global-set-key (kbd "M-<down>") 'forward-paragraph)
+(global-set-key (kbd "M-<up>") 'backward-paragraph)
+(global-set-key (kbd "M-<down>") 'forward-paragraph)
    #+END_SRC
 ** Helm
   #+BEGIN_SRC emacs-lisp
