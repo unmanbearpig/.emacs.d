@@ -420,7 +420,7 @@
   :ensure t
   :config
   (progn
-    (setq magit-status-buffer-switch-function (quote switch-to-buffer))
+ (setq magit-status-buffer-switch-function (quote switch-to-buffer))
     (setq magit-save-repository-buffers "dontask"))
 )
    #+END_SRC
