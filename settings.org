@@ -85,6 +85,12 @@
    #+BEGIN_SRC emacs-lisp
 (global-subword-mode t)
    #+END_SRC
+** Crux
+   #+BEGIN_SRC emacs-lisp
+(use-package crux
+  :bind (("C-a" . crux-move-beginning-of-line))
+)
+   #+END_SRC
 * Appearance
 ** Disable menu bar
    #+BEGIN_SRC emacs-lisp
