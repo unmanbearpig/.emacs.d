@@ -355,7 +355,7 @@
    (use-package projectile
      :ensure t
      :diminish projectile-mode
-     :bind (("C-x f" . helm-projectile-find-file-dwim)
+     :bind (("C-x f" . helm-projectile-find-file)
             ("C-c p f" . projectile-vc))
      :config
      (progn (dolist (filename '("Rakefile" "CHANGELOG.md" "LICENSE" "README.md" "README.rdoc" "LICENSE.md"))
