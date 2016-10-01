@@ -207,6 +207,15 @@
 
    #+END_SRC
 * Window and buffer management
+** Switch to new window
+   #+BEGIN_SRC emacs-lisp
+(defun split-window-right-and-switch-to-it ()
+  (interactive)
+  (split-window-right)
+  (other-window 1)
+)
+(global-set-key (kbd "C-x 3") 'split-window-right-and-switch-to-it)
+   #+END_SRC
 ** Hydra
    #+BEGIN_SRC emacs-lisp
    (defhydra hydra-window (global-map "C-c w")
