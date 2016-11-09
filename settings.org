@@ -2,7 +2,7 @@
 #+AUTHOR: unmanbearpig
 * Tweak GC
   #+BEGIN_SRC emacs-lisp
- (set 'gc-cons-threshold 500000000)
+ (set 'gc-cons-threshold 100000000)
   #+END_SRC
 * Load packages
 ** Package repositories
