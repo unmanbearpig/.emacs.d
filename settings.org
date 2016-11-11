@@ -544,6 +544,7 @@
 
       (yas-reload-all)
       (add-hook 'ruby-mode-hook #'yas-minor-mode)
+      (add-hook 'web-mode-hook #'yas-minor-mode)
     )
   )
   #+END_SRC
