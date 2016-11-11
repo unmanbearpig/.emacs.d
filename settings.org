@@ -33,6 +33,10 @@
    #+BEGIN_SRC emacs-lisp
    (setq kill-whole-line t)
    #+END_SRC
+** Save all without asking on compilation
+   #+BEGIN_SRC emacs-lisp
+   (setq compilation-ask-about-save nil)
+   #+END_SRC
 ** Things I'm not sure I need any more
    #+BEGIN_SRC not-emacs-lisp
    ;; treat _ as part of a word
