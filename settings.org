@@ -29,13 +29,15 @@
    #+BEGIN_SRC emacs-lisp
    (setq tags-revert-without-query 1)
    #+END_SRC
+** Kill whole line
+   #+BEGIN_SRC emacs-lisp
+   (setq kill-whole-line t)
+   #+END_SRC
 ** Things I'm not sure I need any more
    #+BEGIN_SRC not-emacs-lisp
    ;; treat _ as part of a word
 (defun set-underscore-as-word-symbol ()
     (modify-syntax-entry ?_ "w"))
-
-(setq kill-whole-line t)
 
 (defadvice ansi-term (after advise-ansi-term-coding-system)
     (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
