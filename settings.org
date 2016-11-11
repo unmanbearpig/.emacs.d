@@ -140,6 +140,8 @@
    (add-hook 'package-menu-mode-hook 'hl-line-mode)
    (add-hook 'compilation-mode-hook 'hl-line-mode)
    #+END_SRC
+** Wrap lines in compilation mode
+   (add-hook 'compilation-mode-hook 'visual-line-mode)
 * Org mode
 ** Org babel languages
    Stolen from https://github.com/danielmai/.emacs.d/blob/master/config.org
