@@ -37,31 +37,20 @@
    #+BEGIN_SRC emacs-lisp
    (setq compilation-ask-about-save nil)
    #+END_SRC
-** Things I'm not sure I need any more
-   #+BEGIN_SRC not-emacs-lisp
-   ;; treat _ as part of a word
-(defun set-underscore-as-word-symbol ()
-    (modify-syntax-entry ?_ "w"))
-
-(defadvice ansi-term (after advise-ansi-term-coding-system)
-    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
-(ad-activate 'ansi-term)
-
-(setq compilation-ask-about-save nil)
-;; don't truncate lines in compilation mode
-(add-hook 'compilation-mode-hook
-          (lambda ()
-            (visual-line-mode t)))
-
-(add-hook 'shell-mode-hook
-          (lambda ()
-            (visual-line-mode t)))
+** Adaptive wrapping
+   Not sure if I like it
+   It seems to not work well in RSpec output
 
 (add-hook 'visual-line-mode-hook
           (lambda ()
             (adaptive-wrap-prefix-mode)))
 
-(global-subword-mode t)
+
+** Things I'm not sure I need any more
+   #+BEGIN_SRC not-emacs-lisp
+(defadvice ansi-term (after advise-ansi-term-coding-system)
+    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
+(ad-activate 'ansi-term)
 
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
