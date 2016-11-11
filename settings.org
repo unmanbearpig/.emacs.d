@@ -539,18 +539,14 @@
     :ensure t
     :config
     (progn
-      (yas-global-mode)
       (setq yas-snippet-dirs
         '("~/.emacs.d/snippets"))
-      (yas-reload-all))
+
+      (yas-reload-all)
+      (add-hook 'ruby-mode-hook #'yas-minor-mode)
+    )
   )
   #+END_SRC
-
-  (yas-global-mode)
-  (setq yas-snippet-dirs
-      '("~/.emacs.d/snippets"))
-
-  (yas-reload-all)
 ** TODO Wrap things with tags
    https://stackoverflow.com/questions/1558178/wrap-selection-in-open-close-tag-like-textmate
 
