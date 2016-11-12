@@ -490,6 +490,11 @@
     (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))))
    #+END_SRC
 ** rust
+   #+BEGIN_SRC emacs-lisp
+   (use-package cargo
+     :bind (("C-c , r" . cargo-process-test))
+   )
+   #+END_SRC
 ** ruby
 *** inf-ruby
     (use-package inf-ruby :ensure t)
