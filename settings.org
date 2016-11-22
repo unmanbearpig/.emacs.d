@@ -89,6 +89,10 @@
   :bind (("C-a" . crux-move-beginning-of-line))
 )
    #+END_SRC
+** M-o to other-window
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "M-o") 'other-window)
+   #+END_SRC
 * Appearance
 ** Disable menu bar
    #+BEGIN_SRC emacs-lisp
