@@ -540,6 +540,9 @@
 *** yaml-mode
 ** markdown
 *** markdown-mode
+    #+BEGIN_SRC emacs-lisp
+    (use-package markdown-mode)
+    #+END_SRC
 ** javascript
    (autoload 'js2-mode "js2-mode" nil t)
    (add-to-list 'auto-mode-alist '("\\.js$" . js-jsx-mode))
