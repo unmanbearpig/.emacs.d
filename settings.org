@@ -380,8 +380,7 @@
    (use-package projectile
      :ensure t
      :diminish projectile-mode
-     :bind (("C-x f" . helm-projectile-find-file)
-            ("C-c p f" . projectile-vc))
+     :bind (("C-c p f" . projectile-vc))
      :config
      (progn (dolist (filename '("Rakefile" "CHANGELOG.md" "LICENSE" "README.md" "README.rdoc" "LICENSE.md"))
               (add-to-list 'projectile-project-root-files filename t))
@@ -393,7 +392,9 @@
    #+BEGIN_SRC emacs-lisp
    (use-package helm-projectile
      :ensure t
-     :bind ("M-s p" . helm-projectile-ag))
+     :bind (("M-s p" . helm-projectile-ag)
+            ("C-x f" . helm-projectile-find-file)
+   ))
    #+END_SRC
 ** helm-ag
    #+BEGIN_SRC emacs-lisp
