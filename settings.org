@@ -481,6 +481,19 @@
    (use-package hydra
      :ensure t)
    #+END_SRC
+** Evil
+   #+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/projects/stuff/evil")
+(setq evil-disable-undo-tree-mode t)
+(require 'evil)
+;; (evil-mode 1) ;; don't enable by default
+   #+END_SRC
+** ERC
+*** Hide join / part messages
+   #+BEGIN_SRC emacs-lisp
+(setq erc-lurker-hide-list '("JOIN" "PART" "QUIT"))
+(setq erc-lurker-threshold-time 1800)
+   #+END_SRC
 * TODO Languages
 ** sass/scss
 ** web-mode
