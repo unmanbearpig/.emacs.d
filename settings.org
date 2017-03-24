@@ -564,6 +564,19 @@
 ** json
 *** json-mode
 ** coffee mode
+** PureScript
+#+BEGIN_SRC emacs-lisp
+(use-package purescript-mode)
+(use-package psc-ide
+  :config
+  (add-hook 'purescript-mode-hook
+    (lambda ()
+      (psc-ide-mode)
+      (company-mode)
+      (flycheck-mode)
+      (turn-on-purescript-indentation)))
+)
+#+END_SRC
 * Snippets
   #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
