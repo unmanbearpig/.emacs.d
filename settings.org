@@ -539,7 +539,7 @@
         (setq rspec-expose-dsl-globally t)
         (setq rspec-use-bundler-when-possible nil)
         (setq rspec-use-rake-when-possible nil)
-        (setq rspec-use-rvm t)
+        (setq rspec-use-rvm nil)
 
         (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
         (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
