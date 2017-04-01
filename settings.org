@@ -339,6 +339,16 @@
        (add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode))
        (add-hook 'org-mode-hook 'adaptive-wrap-prefix-mode))
    #+END_SRC
+** Multiple cursors
+   #+BEGIN_SRC emacs-lisp
+(use-package multiple-cursors
+  :bind (("C-c n n" . mc/mark-next-like-this)))
+(defhydra hydra-mc (global-map "C-c m")
+              "Multiple cursors"
+              ("e" mc/edit-lines)
+              ("n" mc/mark-next-like-this)
+              ("a" mc/mark-all-like-this))
+   #+END_SRC
 * Navigation
 ** Backward and forward paragraph
    #+BEGIN_SRC emacs-lisp
