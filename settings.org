@@ -506,6 +506,9 @@
    #+END_SRC
 * TODO Languages
 ** sass/scss
+#+BEGIN_SRC emacs-lisp
+ (use-package sass-mode)
+#+END_SRC
 ** web-mode
    #+BEGIN_SRC emacs-lisp
 (use-package web-mode
