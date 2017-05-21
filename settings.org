@@ -577,6 +577,15 @@
 ** json
 *** json-mode
 ** coffee mode
+** Haskell
+#+BEGIN_SRC emacs-lisp
+(use-package haskell-mode
+  :config
+  (add-hook 'haskell-mode-hook (
+    lambda ()
+      (flycheck-mode)
+    )))
+#+END_SRC
 ** PureScript
 #+BEGIN_SRC emacs-lisp
 (use-package purescript-mode)
