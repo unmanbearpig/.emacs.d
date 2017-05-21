@@ -561,9 +561,9 @@
 ** ruby
 *** inf-ruby
     (use-package inf-ruby :ensure t)
-*** rvm (not sure)
+*** chruby
     #+BEGIN_SRC emacs-lisp
-    (use-package rvm :ensure t)
+    (use-package chruby :ensure t)
     #+END_SRC
 *** rspec-mode
     #+BEGIN_SRC emacs-lisp
