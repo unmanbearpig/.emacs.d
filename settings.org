@@ -584,8 +584,6 @@
 *** ruby-hash-syntax
 *** rubocop
 **** (not sure) ruby-electric
-** yaml
-*** yaml-mode
 ** markdown
 *** markdown-mode
     #+BEGIN_SRC emacs-lisp
