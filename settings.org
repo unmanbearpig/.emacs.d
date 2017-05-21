@@ -385,6 +385,27 @@
    ;; (define-key helm-map (kbd "C-z") 'helm-select-action)
    #+END_SRC
 
+** Counsel / Ivy
+   #+BEGIN_SRC emacs-lisp
+(use-package ivy
+  :diminish ivy-mode
+  :config (progn ivy-mode))
+(use-package counsel
+  :diminish counsel-mode
+  :bind (("M-x" . counsel-M-x)
+	 ("C-x C-f" . counsel-find-file)
+	 ("C-x b" . ivy-switch-buffer)
+	 ("C-c r" . counsel-recentf))
+  :config (progn (counsel-mode))
+)
+
+(use-package counsel-projectile
+   :bind (
+     ("C-x f" . counsel-projectile-find-file)
+     ("M-s p" . counsel-projectile-ag))
+)
+
+   #+END_SRC
 ** Projectile
    #+BEGIN_SRC emacs-lisp
    (use-package projectile
@@ -399,7 +420,7 @@
    #+END_SRC
 
 ** helm-projectile
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp-commented-out
    (use-package helm-projectile
      :ensure t
      :bind (("M-s p" . helm-projectile-ag)
