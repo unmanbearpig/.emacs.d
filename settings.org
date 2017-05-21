@@ -222,6 +222,12 @@
 (use-package ox-twbs)
 
    #+END_SRC
+** todo-keywords
+   #+BEGIN_SRC emacs-lisp
+   (setq org-todo-keywords
+       '((sequence "TODO" "IN_PROGRESS" "DONE")))
+   (setq org-todo-keyword-faces '(("IN_PROGRESS" . "BLUE")))
+   #+END_SRC
 * Window and buffer management
 ** Switch to new window
    #+BEGIN_SRC emacs-lisp
