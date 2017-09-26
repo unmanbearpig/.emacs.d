@@ -523,9 +523,9 @@
    #+END_SRC
 ** Evil
    #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/projects/stuff/evil")
-(setq evil-disable-undo-tree-mode t)
-(require 'evil)
+;; (add-to-list 'load-path "~/projects/stuff/evil")
+;; (setq evil-disable-undo-tree-mode t)
+;; (require 'evil)
 ;; (evil-mode 1) ;; don't enable by default
    #+END_SRC
 ** ERC
