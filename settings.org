@@ -1,9 +1,5 @@
 #+TITLE: unmanbearpig's Emacs configuration
 #+AUTHOR: unmanbearpig
-* Tweak GC
-  #+BEGIN_SRC emacs-lisp
- (set 'gc-cons-threshold 100000000)
-  #+END_SRC
 * Load packages
 ** Package repositories
   #+BEGIN_SRC emacs-lisp
