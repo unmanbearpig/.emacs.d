@@ -597,6 +597,12 @@
       (turn-on-purescript-indentation)))
 )
 #+END_SRC
+** Elm
+   #+BEGIN_SRC emacs-lisp
+   (use-package elm-mode)
+   (use-package flycheck-elm)
+
+   #+END_SRC
 * Snippets
   #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
