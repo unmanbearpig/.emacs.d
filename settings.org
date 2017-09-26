@@ -490,7 +490,7 @@
 (setq erc-lurker-hide-list '("JOIN" "PART" "QUIT"))
 (setq erc-lurker-threshold-time 1800)
    #+END_SRC
-* TODO Languages
+* Languages
 ** sass/scss
 #+BEGIN_SRC emacs-lisp
  (use-package sass-mode)
@@ -509,8 +509,23 @@
     (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
-    (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))))
+    (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+    (add-hook 'web-mode-hook
+              (lambda ()
+                (emmet-mode)))))
    #+END_SRC
+** Emmet-mode
+#+BEGIN_SRC emacs-lisp
+(use-package emmet-mode)
+
+(defun unmbp/emmet-expand-line-if-webish-mode (arg)
+    (interactive "P")
+  "Use emmet-expand-line if current mode is web-mode or similar"
+  (if (eq major-mode 'web-mode)
+      (emmet-expand-line arg))
+  )
+#+END_SRC
+
 ** rust
    #+BEGIN_SRC emacs-lisp
    (use-package cargo
@@ -598,6 +613,22 @@
     )
   )
   #+END_SRC
+* web-mode + emmet + hippie expand
+  #+BEGIN_SRC emacs-lisp
+(use-package smart-tab
+  :config (progn
+            (setq smart-tab-using-hippie-expand t)
+            (add-hook 'prog-mode-hook 'smart-tab-mode)
+            ))
+
+(use-package hippie-exp
+  :ensure nil
+  :defer t
+  :bind ("<C-return>" . hippie-expand)
+  :config (setq-default hippie-expand-try-functions-list
+                        '(yas-hippie-try-expand
+                          unmbp/emmet-expand-line-if-webish-mode)))
+  #+END_SRC
 ** TODO Wrap things with tags
    https://stackoverflow.com/questions/1558178/wrap-selection-in-open-close-tag-like-textmate
 
@@ -618,6 +649,13 @@
         (split-string string "[\r\n]")) "\n") t nil 1) (point) (point))))
    #+END_SRC
 * Not sure
+** comapny-mode
+#+BEGIN_SRC emacs-lisp
+   (use-package company
+   :config (progn
+             (add-hook 'after-init-hook 'global-company-mode)))
+
+#+END_SRC
 ** smartparens
 ** restclient
 ** persp-projectile
