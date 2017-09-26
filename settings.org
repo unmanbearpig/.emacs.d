@@ -575,7 +575,6 @@
    (add-to-list 'auto-mode-alist '("\\.es6$" . js2-mode))
 ** json
 *** json-mode
-** coffee mode
 ** Haskell
 #+BEGIN_SRC emacs-lisp
 (use-package haskell-mode
