@@ -367,33 +367,6 @@
 (global-set-key (kbd "M-<up>") 'backward-paragraph)
 (global-set-key (kbd "M-<down>") 'forward-paragraph)
    #+END_SRC
-** Helm
-  #+BEGIN_SRC emacs-lisp
-(use-package helm
-  :ensure t
-  :diminish helm-mode
-  :bind (("M-x" . helm-M-x)
-	 ("C-x C-f" . helm-find-files)
-	 ("C-x b" . helm-buffers-list)
-	 ("C-c r" . helm-recentf)
-         ("M-s M-o" . helm-occur)
-	 ("C-c C-c M-x" . execute-extended-command)
-	 :map helm-map
-	 ("TAB" . helm-execute-persistent-action)
-	 ("C-z" . helm-select-action))
-  :config (progn
-	    (require 'helm-config)
-      (helm-mode t)
-    (add-to-list 'helm-completing-read-handlers-alist
-     '(dired . nil)))
-)
-  #+END_SRC
-*** Remap helm bindings, not sure why
-   #+BEGIN_SRC emacs-lisp
-   ;; (define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
-   ;; (define-key helm-map (kbd "C-z") 'helm-select-action)
-   #+END_SRC
-
 ** Counsel / Ivy
    #+BEGIN_SRC emacs-lisp
 (use-package ivy
@@ -428,23 +401,6 @@
    )
    #+END_SRC
 
-** helm-projectile
-   #+BEGIN_SRC emacs-lisp-commented-out
-   (use-package helm-projectile
-     :ensure t
-     :bind (("M-s p" . helm-projectile-ag)
-            ("C-x f" . helm-projectile-find-file)
-   ))
-   #+END_SRC
-** helm-ag
-   #+BEGIN_SRC emacs-lisp
-   (use-package ag
-     :ensure t
-     :config
-     (use-package helm-ag
-       :ensure t
-       :bind ("M-s a" . helm-ag)))
-   #+END_SRC
 ** Swiper
    #+BEGIN_SRC emacs-lisp
    (use-package swiper
@@ -667,7 +623,6 @@
 ** persp-projectile
 ** paredit
 ** magit-filenotify
-** helm-flycheck
 ** exec-path-from-shell
 ** auto-indent-mode
 ** anzu
