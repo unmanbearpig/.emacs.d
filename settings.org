@@ -603,6 +603,10 @@
    (use-package flycheck-elm)
 
    #+END_SRC
+** Toml
+   #+BEGIN_SRC emacs-lisp
+(use-package toml-mode)
+   #+END_SRC
 * Snippets
   #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
