@@ -165,7 +165,6 @@
    (ruby . t)
    (lisp . t)
    (scheme . t)
-   (sh . t)
    (sqlite . t)
    (js . t)))
 
