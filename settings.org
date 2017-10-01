@@ -151,6 +151,14 @@
   :ensure t))
 
    #+END_SRC
+** Frame background mode
+   Make sure that Emacs think the background is black, it gets confused some times.
+   #+BEGIN_SRC emacs-lisp-
+   (setq frame-background-mode 'dark)
+   (frame-set-background-mode nil)
+
+   #+END_SRC
+
 * Org mode
 ** Org babel languages
    Stolen from https://github.com/danielmai/.emacs.d/blob/master/config.org
