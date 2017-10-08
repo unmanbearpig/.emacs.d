@@ -627,6 +627,10 @@
     (add-hook 'elpy-mode-hook 'elpy-use-ipython)
     (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
   #+END_SRC
+** Nix
+   #+BEGIN_SRC emacs-lisp
+   (use-package nix-mode)
+   #+END_SRC
 * Snippets
   #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
