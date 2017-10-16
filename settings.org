@@ -358,12 +358,17 @@
 ** Multiple cursors
    #+BEGIN_SRC emacs-lisp
 (use-package multiple-cursors
-  :bind (("C-c n n" . mc/mark-next-like-this)))
-(defhydra hydra-mc (global-map "C-c m")
-              "Multiple cursors"
-              ("e" mc/edit-lines)
-              ("n" mc/mark-next-like-this)
-              ("a" mc/mark-all-like-this))
+  :bind (("C-c n n" . mc/mark-next-like-this))
+  :config
+  (progn
+    (defhydra hydra-mc (global-map "C-c m")
+      "Multiple cursors"
+      ("E" mc/edit-lines)
+      ("n" mc/mark-next-like-this)
+      ("A" mc/mark-all-like-this)
+      ("a" mc/edit-beginnings-of-lines)
+      ("e" mc/edit-ends-of-lines))
+    (setq mc/always-run-for-all 't)))
    #+END_SRC
 * Navigation
 ** Backward and forward paragraph
