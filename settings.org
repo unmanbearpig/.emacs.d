@@ -370,14 +370,6 @@
       ("e" mc/edit-ends-of-lines))
     (setq mc/always-run-for-all 't)))
    #+END_SRC
-** Aggressive indent
-   #+BEGIN_SRC emacs-lisp
-
-(use-package aggressive-indent
-:config
-(aggressive-indent-mode))
-
-   #+END_SRC
 * Navigation
 ** Backward and forward paragraph
    #+BEGIN_SRC emacs-lisp
