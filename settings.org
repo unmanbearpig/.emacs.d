@@ -152,8 +152,8 @@
 
    #+END_SRC
 ** Frame background mode
-   Make sure that Emacs think the background is black, it gets confused some times.
-   #+BEGIN_SRC emacs-lisp-
+   Make sure that Emacs thinks the background is black, it gets confused for some reason.
+   #+BEGIN_SRC emacs-lisp
    (setq frame-background-mode 'dark)
    (frame-set-background-mode nil)
 
