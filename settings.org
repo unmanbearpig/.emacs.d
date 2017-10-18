@@ -168,6 +168,11 @@
    #+END_SRC
 
 * Org mode
+** htmlize
+   Needed for exporting from org to html
+   #+BEGIN_SRC emacs-lisp
+   (use-package htmlize)
+   #+END_SRC
 ** Org babel languages
    Stolen from https://github.com/danielmai/.emacs.d/blob/master/config.org
    #+BEGIN_SRC emacs-lisp
