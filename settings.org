@@ -153,10 +153,12 @@
    #+END_SRC
 ** Frame background mode
    Make sure that Emacs thinks the background is black, it gets confused for some reason.
+   Run after a new frame gets created, otherwise I get weird colors in emacsclient
    #+BEGIN_SRC emacs-lisp
-   (setq frame-background-mode 'dark)
-   (frame-set-background-mode nil)
-
+   (defun unmanbearpig-set-background-mode (_)
+     (setq frame-background-mode 'dark)
+     (frame-set-background-mode nil))
+   (add-to-list 'after-make-frame-functions #'unmanbearpig-set-background-mode)
    #+END_SRC
 
 * Org mode
