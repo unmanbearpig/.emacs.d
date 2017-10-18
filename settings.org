@@ -155,9 +155,20 @@
    Make sure that Emacs thinks the background is black, it gets confused for some reason.
    Run after a new frame gets created, otherwise I get weird colors in emacsclient
    #+BEGIN_SRC emacs-lisp
-   (defun unmanbearpig-set-background-mode (_)
-     (setq frame-background-mode 'dark)
-     (frame-set-background-mode nil))
+   (defun unmanbearpig-set-background-mode (frame)
+     (with-selected-frame frame
+       (progn
+         (setq frame-background-mode 'dark)
+         (frame-set-background-mode nil)
+   )))
+
+   (setq after-make-frame-functions #'(select-frame unmanbearpig-set-background-mode))
+
+   ;; set background mode immediately if it's a color frame
+   ;; for some reason it makes all colors black and white if I run it in emacs daemon
+   ;; which has an extra monochrome frame for some reason
+   (if (eq (frame-parameter (selected-frame) 'display-type) 'color)
+       (unmanbearpig-set-background-mode (selected-frame)))
    (add-to-list 'after-make-frame-functions #'unmanbearpig-set-background-mode)
    #+END_SRC
 
