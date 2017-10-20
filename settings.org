@@ -635,6 +635,7 @@
 ** PureScript
 #+BEGIN_SRC emacs-lisp
 (use-package purescript-mode)
+(use-package flycheck-purescript)
 (use-package psc-ide
   :config
   (add-hook 'purescript-mode-hook
