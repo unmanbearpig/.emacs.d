@@ -585,6 +585,7 @@
     #+END_SRC
 *** rspec-mode
     #+BEGIN_SRC emacs-lisp
+    (use-package inf-ruby)
     (use-package rspec-mode
       :ensure t
       :config
