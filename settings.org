@@ -692,7 +692,7 @@
   :config (progn
             (setq smart-tab-using-hippie-expand t)
             (add-hook 'prog-mode-hook 'smart-tab-mode)
-            (setq smart-tab-user-provided-completion-function 'company-complete)
+            (setq smart-tab-user-provided-completion-function nil);; 'company-complete)
             ))
 
 (use-package hippie-exp
