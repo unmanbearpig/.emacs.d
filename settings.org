@@ -336,7 +336,11 @@
    #+BEGIN_SRC emacs-lisp
    (global-set-key (kbd "C-x w") 'visual-line-mode)
    #+END_SRC
-
+** Toggle full screen
+   #+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "s-f") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-M-s-f") 'toggle-frame-fullscreen)
+   #+END_SRC
 * Editing
 ** Indent with 2 spaces
    #+BEGIN_SRC emacs-lisp
