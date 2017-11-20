@@ -269,6 +269,10 @@
        '((sequence "TODO" "IN_PROGRESS" "DONE")))
    (setq org-todo-keyword-faces '(("IN_PROGRESS" . "BLUE")))
    #+END_SRC
+** Inline image width
+   #+BEGIN_SRC emacs-lisp
+(setq org-image-actual-width 800)
+   #+END_SRC
 * Window and buffer management
 ** Switch to new window
    #+BEGIN_SRC emacs-lisp
