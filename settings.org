@@ -177,6 +177,14 @@
 (set-face-background 'mode-line "grey20")
 (set-face-foreground 'mode-line "white")
      #+END_SRC
+
+** Mac specific
+   #+BEGIN_SRC emacs-lisp
+(if (boundp 'mac-command-modifier)
+    (setq mac-command-modifier 'super))
+(if (boundp 'mac-option-modifier)
+    (setq mac-option-modifier 'meta))
+   #+END_SRC
 * Org mode
 ** htmlize
    Needed for exporting from org to html
