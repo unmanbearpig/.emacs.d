@@ -413,6 +413,11 @@
    #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C--") 'undo)
    #+END_SRC
+* Dired
+** dwim target
+   #+BEGIN_SRC emacs-lisp
+(setq dired-dwim-target t)
+   #+END_SRC
 * Navigation
 ** Backward and forward paragraph
    #+BEGIN_SRC emacs-lisp
