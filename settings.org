@@ -179,12 +179,19 @@
      #+END_SRC
 
 ** Mac specific
+   Set command as super and left option as meta.
    #+BEGIN_SRC emacs-lisp
 (if (boundp 'mac-command-modifier)
     (setq mac-command-modifier 'super))
 (if (boundp 'mac-option-modifier)
     (setq mac-option-modifier 'meta))
-   #+END_SRC
+  #+END_SRC
+
+   Set right option key as actual mac optional key (insert special characters).
+  #+BEGIN_SRC emacs-lisp
+(if (boundp 'mac-right-option-modifier)
+    (setq mac-right-option-modifier nil))
+  #+END_SRC
 * Org mode
 ** htmlize
    Needed for exporting from org to html
