@@ -434,6 +434,10 @@
 (global-set-key (kbd "M-<up>") 'backward-paragraph)
 (global-set-key (kbd "M-<down>") 'forward-paragraph)
    #+END_SRC
+** ido-find-file
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-x C-f") 'ido-find-file)
+   #+END_SRC
 ** Counsel / Ivy
    #+BEGIN_SRC emacs-lisp
 (use-package ivy
@@ -442,7 +446,6 @@
 (use-package counsel
   :diminish counsel-mode
   :bind (("M-x" . counsel-M-x)
-	 ("C-x C-f" . counsel-find-file)
 	 ("C-x b" . ivy-switch-buffer)
 	 ("C-c r" . counsel-recentf))
   :config (progn (counsel-mode))
