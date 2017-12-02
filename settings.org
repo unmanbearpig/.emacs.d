@@ -527,7 +527,10 @@
    #+END_SRC
 
 ** TODO gitignore mode
-** TODO git timemachine
+** git timemachine
+   #+BEGIN_SRC emacs-lisp
+(use-package git-timemachine)
+   #+END_SRC
 * OS Specific
 ** OS X
    #+BEGIN_SRC emacs-lisp
