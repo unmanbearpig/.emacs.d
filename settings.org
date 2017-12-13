@@ -88,6 +88,11 @@
    (global-set-key (kbd "M-o") 'other-window)
    #+END_SRC
 * Appearance
+** Theme
+   #+BEGIN_SRC emacs-lisp
+(if (display-graphic-p)
+    (load-theme 'ujelly t))
+   #+END_SRC
 ** Disable menu bar
    #+BEGIN_SRC emacs-lisp
    (menu-bar-mode -1)
