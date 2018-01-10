@@ -717,6 +717,10 @@
    #+BEGIN_SRC emacs-lisp
    (use-package yaml-mode)
    #+END_SRC
+** Dockerfile
+   #+BEGIN_SRC emacs-lisp
+   (use-package dockerfile-mode)
+   #+END_SRC
 * Snippets
   #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
