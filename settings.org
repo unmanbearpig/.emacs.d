@@ -778,7 +778,8 @@
    (use-package yasnippet)
    (use-package company
    :config (progn
-             (add-hook 'after-init-hook 'global-company-mode))
+             (add-hook 'after-init-hook 'global-company-mode)
+             (setq company-global-modes '(not inf-ruby-mode)))
 (defun check-expansion ()
   (save-excursion
     (if (looking-at "\\_>") t
