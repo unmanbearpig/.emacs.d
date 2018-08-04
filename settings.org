@@ -278,8 +278,12 @@
 ** todo-keywords
    #+BEGIN_SRC emacs-lisp
    (setq org-todo-keywords
-       '((sequence "TODO" "IN_PROGRESS" "DONE")))
-   (setq org-todo-keyword-faces '(("IN_PROGRESS" . "BLUE")))
+       '((sequence "TODO" "IN_PROGRESS" "DONE" "LATER")))
+   (setq org-todo-keyword-faces '(
+                                  ("TODO" . "PINK")
+                                  ("DONE" . "GREEN")
+                                  ("IN_PROGRESS" . "brightyellow")
+                                  ("LATER" . "brightblack")))
    #+END_SRC
 ** Inline image width
    #+BEGIN_SRC emacs-lisp
