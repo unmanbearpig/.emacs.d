@@ -462,7 +462,6 @@
 
 (use-package counsel-projectile
    :bind (
-     ("C-x f" . counsel-projectile-find-file)
      ("M-s p" . counsel-projectile-ag))
 )
 
@@ -472,7 +471,8 @@
    (use-package projectile
      :ensure t
      :diminish projectile-mode
-     :bind (("C-c p v" . projectile-vc))
+     :bind (("C-c p v" . projectile-vc)
+            ("C-x f" . projectile-find-file))
      :config
      (progn (dolist (filename '("Rakefile" "CHANGELOG.md" "LICENSE" "README.md" "README.rdoc" "LICENSE.md"))
               (add-to-list 'projectile-project-root-files filename t))
