@@ -292,6 +292,7 @@
 ** org-agenda
    #+BEGIN_SRC emacs-lisp
 (setq org-agenda-files "~/org/.agenda_files")
+(global-set-key (kbd "C-c a") 'org-agenda)
    #+END_SRC
 * Window and buffer management
 ** Switch to new window
