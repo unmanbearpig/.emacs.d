@@ -289,6 +289,10 @@
    #+BEGIN_SRC emacs-lisp
 (setq org-image-actual-width 800)
    #+END_SRC
+** org-agenda
+   #+BEGIN_SRC emacs-lisp
+(setq org-agenda-files "~/org/.agenda_files")
+   #+END_SRC
 * Window and buffer management
 ** Switch to new window
    #+BEGIN_SRC emacs-lisp
