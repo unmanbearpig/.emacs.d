@@ -199,7 +199,10 @@
   #+END_SRC
 ** Diminish
    #+BEGIN_SRC emacs-lisp
-(use-package diminish)
+(use-package diminish
+  :config (progn (diminish 'auto-revert-mode)
+                 (diminish 'company-mode)
+                 (diminish 'subword-mode)))
    #+END_SRC
 * Org mode
 ** htmlize
