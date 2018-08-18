@@ -912,3 +912,9 @@
   :init (global-flycheck-mode)
   :config (progn (setq flycheck-disabled-checkers nil)))
   #+END_SRC
+* Flyspell
+** Modes to enable in
+   #+BEGIN_SRC emacs-lisp
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+(add-hook 'markdown-mode-hook 'turn-on-flyspell)
+   #+END_SRC
