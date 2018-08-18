@@ -918,3 +918,9 @@
 (add-hook 'org-mode-hook 'turn-on-flyspell)
 (add-hook 'markdown-mode-hook 'turn-on-flyspell)
    #+END_SRC
+* Region-state - show number of selected lines
+  #+BEGIN_SRC emacs-lisp
+(use-package region-state
+  :init (region-state-mode))
+
+  #+END_SRC
