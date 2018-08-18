@@ -197,6 +197,10 @@
 (if (boundp 'mac-right-option-modifier)
     (setq mac-right-option-modifier nil))
   #+END_SRC
+** Diminish
+   #+BEGIN_SRC emacs-lisp
+(use-package diminish)
+   #+END_SRC
 * Org mode
 ** htmlize
    Needed for exporting from org to html
