@@ -775,6 +775,7 @@
 * web-mode + emmet + hippie expand
   #+BEGIN_SRC emacs-lisp
 (use-package smart-tab
+  :diminish smart-tab-mode
   :config (progn
             (setq smart-tab-using-hippie-expand t)
             (add-hook 'prog-mode-hook 'smart-tab-mode)
