@@ -441,6 +441,10 @@
    #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C--") 'undo)
    #+END_SRC
+** Enable downcase region binding
+   #+BEGIN_SRC emacs-lisp
+(put 'downcase-region 'disabled nil)
+   #+END_SRC
 * Dired
 ** dwim target
    #+BEGIN_SRC emacs-lisp
