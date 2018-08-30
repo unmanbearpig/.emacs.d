@@ -797,13 +797,13 @@
             (setq smart-tab-user-provided-completion-function nil);; 'company-complete)
             ))
 
-(use-package hippie-exp
-  :ensure nil
-  :defer t
-  :bind ("<C-return>" . hippie-expand)
-  :config (setq-default hippie-expand-try-functions-list
-                        '(yas-hippie-try-expand
-                          unmbp/emmet-expand-line-if-webish-mode)))
+  (use-package hippie-exp
+    :ensure nil
+    :defer t
+    :bind ("<C-return>" . hippie-expand)
+    :config (setq-default hippie-expand-try-functions-list
+                          '(yas-hippie-try-expand
+                            unmbp/emmet-expand-line-if-webish-mode)))
   #+END_SRC
 ** TODO Wrap things with tags
    https://stackoverflow.com/questions/1558178/wrap-selection-in-open-close-tag-like-textmate
@@ -922,7 +922,8 @@
 ** auto-indent-mode
 ** anzu
 ** smart-mode-line
-** atom-dark-theme
+** dumb-jump
+   #+BEGIN_SRC emacs-lisp
 
 (use-package dumb-jump
   :bind (("M-g o" . dumb-jump-go-other-window)
