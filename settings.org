@@ -967,3 +967,30 @@
   :init (region-state-mode))
 
   #+END_SRC
+* Check those out
+** TODO string-inflection
+   https://github.com/akicho8/string-inflection
+
+   underscore -> UPCASE -> CamelCase conversion of names
+** TODO Crux
+   https://github.com/bbatsov/crux
+*** crux-duplicate-current-line-or-region
+*** crux-rename-file-and-buffer
+*** crux-delete-file-and-buffer
+*** crux-top-join-line
+** TODO Prodigy.el
+   https://github.com/rejeep/prodigy.el
+
+   Manage system services. not all of them, just the ones that are defined in your config
+** TODO web-beautify
+   https://github.com/yasuyk/web-beautify
+
+   Format JS
+** TODO Git messenger
+   https://github.com/syohex/emacs-git-messenger
+
+   Show blame message for current line.
+** TODO no littering in emacs config directory
+   https://github.com/emacscollective/no-littering
+
+   Not sure if I need this
