@@ -530,7 +530,8 @@
   ("a" magit-commit-amend)
   ("P" vc-push)
   ("i" vc-register)
-  ("d" magit-diff))
+  ("d" magit-diff)
+  ("O" vc-log-outgoing))
     #+END_SRC
 ** Magit
    #+BEGIN_SRC emacs-lisp
