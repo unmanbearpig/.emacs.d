@@ -968,6 +968,8 @@
 
   #+END_SRC
 * Check those out
+** GitHub's [[https://github.com/github/hub/issues][hub]] integration?
+   I want status of issues in my org file, list all of the issues, etc.
 ** TODO string-inflection
    https://github.com/akicho8/string-inflection
 
