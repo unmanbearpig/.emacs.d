@@ -528,7 +528,7 @@
   ("l" magit-log-current)
   ("c" magit-commit)
   ("a" magit-commit-amend)
-  ("P" magit-push :exit t)
+  ("P" vc-push)
   ("i" vc-register)
   ("d" magit-diff))
     #+END_SRC
