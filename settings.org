@@ -469,6 +469,10 @@
    #+BEGIN_SRC emacs-lisp
    (global-set-key (kbd "C-x C-f") 'ido-find-file)
    #+END_SRC
+** ag - the silver searcher
+   #+BEGIN_SRC emacs-lisp
+(use-package ag)
+   #+END_SRC
 ** Counsel / Ivy
    #+BEGIN_SRC emacs-lisp
 (use-package ivy
