@@ -307,6 +307,32 @@
 (setq org-agenda-files "~/org/.agenda_files")
 (global-set-key (kbd "C-c a") 'org-agenda)
    #+END_SRC
+* System Copy/Paste integration
+  Needs xsel command in Linux
+  #+BEGIN_SRC emacs-lisp
+(case system-type
+  ('darwin (unless window-system
+             (setq interprogram-cut-function
+                   (lambda (text &optional push)
+                     (let* ((process-connection-type nil)
+                            (pbproxy (start-process "pbcopy" "pbcopy" "/usr/bin/pbcopy")))
+                       (process-send-string pbproxy text)
+                       (process-send-eof pbproxy))))))
+  ('gnu/linux (progn
+                (setq x-select-enable-clipboard t)
+                (defun xsel-cut-function (text &optional push)
+                  (with-temp-buffer
+                    (insert text)
+                    (call-process-region (point-min) (point-max) "xsel" nil 0 nil "--clipboard" "--input")))
+                (defun xsel-paste-function()
+
+                  (let ((xsel-output (shell-command-to-string "xsel --clipboard --output")))
+                    (unless (string= (car kill-ring) xsel-output)
+                      xsel-output )))
+                (setq interprogram-cut-function 'xsel-cut-function)
+                (setq interprogram-paste-function 'xsel-paste-function))))
+
+  #+END_SRC
 * Window and buffer management
 ** Switch to new window
    #+BEGIN_SRC emacs-lisp
