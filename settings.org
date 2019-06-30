@@ -562,7 +562,7 @@
   ("u" git-gutter+-unstage-whole-buffer)
   ("k" git-gutter+-revert-hunks)
   ("l" magit-log-current)
-  ("c" magit-commit)
+  ("c" magit-commit-create)
   ("a" magit-commit-amend)
   ("P" vc-push)
   ("i" vc-register)
