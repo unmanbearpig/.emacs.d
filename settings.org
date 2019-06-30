@@ -808,6 +808,12 @@
    #+BEGIN_SRC emacs-lisp
    (use-package dockerfile-mode)
    #+END_SRC
+** C/C++
+   #+begin_src emacs-lisp
+(define-key c++-mode-map (kbd "\C-c \C-d") 'comment-region)
+(define-key c++-mode-map (kbd "\C-c \C-u") 'uncomment-region)
+   #+end_src
+
 * Snippets
   #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
