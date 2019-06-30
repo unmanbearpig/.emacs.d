@@ -749,6 +749,10 @@
 
 ** json
 *** json-mode
+    #+begin_src emacs-lisp
+(use-package json-mode)
+    #+end_src
+
 ** Haskell
 #+BEGIN_SRC emacs-lisp
 (use-package haskell-mode
