@@ -1010,6 +1010,13 @@
   :init (region-state-mode))
 
   #+END_SRC
+* mu4e
+  #+BEGIN_SRC emacs-lisp
+  (add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
+  (require 'mu4e)
+  (setq mu4e-maildir "/home/unmanbearpig/Mail/gmail")
+  (setq mu4e-refile-folder "/Archive")
+  #+END_SRC
 * Check those out
 ** GitHub's [[https://github.com/github/hub/issues][hub]] integration?
    I want status of issues in my org file, list all of the issues, etc.
@@ -1039,3 +1046,8 @@
    https://github.com/emacscollective/no-littering
 
    Not sure if I need this
+* Email
+  #+BEGIN_SRC emacs-lisp
+  (setq smtpmail-smtp-server "smtp.gmail.com"
+        smtpmail-smtp-service 587)
+  #+END_SRC
