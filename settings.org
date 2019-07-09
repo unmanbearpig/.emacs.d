@@ -822,6 +822,9 @@
    #+begin_src emacs-lisp
 (define-key c++-mode-map (kbd "\C-c \C-d") 'comment-region)
 (define-key c++-mode-map (kbd "\C-c \C-u") 'uncomment-region)
+** C#
+   #+begin_src emacs-lisp
+(use-package csharp-mode)
    #+end_src
 
 * Snippets
