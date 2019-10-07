@@ -204,12 +204,6 @@
                  (diminish 'company-mode)
                  (diminish 'subword-mode)))
    #+END_SRC
-** Writeroom
-   Hides everything except the current window
-
-   #+BEGIN_SRC emacs-lisp
-(use-package writeroom-mode)
-   #+END_SRC
 * Org mode
 ** htmlize
    Needed for exporting from org to html
