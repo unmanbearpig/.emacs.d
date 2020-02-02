@@ -518,6 +518,10 @@
      :ensure t
      :diminish projectile-mode
      :bind (("C-c p v" . projectile-vc)
+            ("C-c p !" . projectile-run-shell-command-in-root)
+            ("C-c p &" . projectile-run-async-shell-command-in-root)
+            ("C-c p r" . projectile-replace)
+            ("C-c p R" . projectile-replace-regexp)
             ("C-x f" . projectile-find-file))
      :config
      (progn (dolist (filename '("Rakefile" "CHANGELOG.md" "LICENSE" "README.md" "README.rdoc" "LICENSE.md"))
