@@ -509,7 +509,7 @@
 	 ("C-c r" . counsel-recentf))
   :config (progn (counsel-mode))
 )
-
+(use-package ivy-hydra)
 (use-package counsel-projectile
    :bind (
      ("M-s p" . counsel-projectile-ag))
