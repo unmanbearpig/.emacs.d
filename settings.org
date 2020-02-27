@@ -512,7 +512,7 @@
 (use-package ivy-hydra)
 (use-package counsel-projectile
    :bind (
-     ("M-s p" . counsel-projectile-ag))
+     ("M-s p" . counsel-projectile-rg))
 )
 
    #+END_SRC
