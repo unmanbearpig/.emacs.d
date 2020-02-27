@@ -208,6 +208,9 @@
                  (diminish 'subword-mode)))
    #+END_SRC
 * Org mode
+  #+BEGIN_SRC emacs-lisp
+  (use-package org)
+  #+END_SRC
 ** htmlize
    Needed for exporting from org to html
    #+BEGIN_SRC emacs-lisp
