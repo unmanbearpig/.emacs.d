@@ -757,7 +757,7 @@
     #+end_src
 
 ** Haskell
-#+BEGIN_SRC emacs-lisp
+# #+BEGIN_SRC emacs-lisp
 (use-package haskell-mode
   :config
   (add-hook 'haskell-mode-hook (
@@ -767,25 +767,25 @@
     )))
 #+END_SRC
 ** PureScript
-#+BEGIN_SRC emacs-lisp
-(use-package purescript-mode)
-(use-package flycheck-purescript)
-(use-package psc-ide
-  :config
-  (add-hook 'purescript-mode-hook
-    (lambda ()
-      (psc-ide-mode)
-      (company-mode)
-      (flycheck-mode)
-      (turn-on-purescript-indentation)))
-)
-#+END_SRC
+# #+BEGIN_SRC emacs-lisp
+# (use-package purescript-mode)
+# (use-package flycheck-purescript)
+# (use-package psc-ide
+#   :config
+#   (add-hook 'purescript-mode-hook
+#     (lambda ()
+#       (psc-ide-mode)
+#       (company-mode)
+#       (flycheck-mode)
+#       (turn-on-purescript-indentation)))
+# )
+# #+END_SRC
 ** Elm
-   #+BEGIN_SRC emacs-lisp
-   (use-package elm-mode)
-   (use-package flycheck-elm)
+   # #+BEGIN_SRC emacs-lisp
+   # (use-package elm-mode)
+   # (use-package flycheck-elm)
 
-   #+END_SRC
+   # #+END_SRC
 ** Toml
    #+BEGIN_SRC emacs-lisp
 (use-package toml-mode)
@@ -801,7 +801,7 @@
   #+END_SRC
 ** Nix
    #+BEGIN_SRC emacs-lisp
-   (use-package nix-mode)
+   ; (use-package nix-mode)
    #+END_SRC
 ** YAML
    #+BEGIN_SRC emacs-lisp
