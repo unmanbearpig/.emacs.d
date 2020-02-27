@@ -822,13 +822,21 @@
    (use-package dockerfile-mode)
    #+END_SRC
 ** C/C++
-   #+begin_src emacs-lisp
+*** Completion
+    #+begin_src emacs-lisp
+(use-package irony)
+(use-package company-irony)
+(use-package company-c-headers)
+
+    #+end_src
+
+*** Key bindings
+    #+begin_src emacs-lisp
 (define-key c++-mode-map (kbd "\C-c \C-d") 'comment-region)
 (define-key c++-mode-map (kbd "\C-c \C-u") 'uncomment-region)
-** C#
-   #+begin_src emacs-lisp
-(use-package csharp-mode)
-   #+end_src
+(define-key c-mode-map (kbd "\C-c \C-d") 'comment-region)
+(define-key c-mode-map (kbd "\C-c \C-u") 'uncomment-region)
+    #+end_src
 
 * Snippets
   #+BEGIN_SRC emacs-lisp
