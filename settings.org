@@ -136,8 +136,9 @@
 ** Highlight line in certain modes
    #+BEGIN_SRC emacs-lisp
    ;; highlight line in package list and compilation mode
-   (add-hook 'package-menu-mode-hook 'hl-line-mode)
-   (add-hook 'compilation-mode-hook 'hl-line-mode)
+   ;; why though?
+   ;; (add-hook 'package-menu-mode-hook 'hl-line-mode)
+   ;; (add-hook 'compilation-mode-hook 'hl-line-mode)
    #+END_SRC
 ** Wrap lines in compilation mode
    #+BEGIN_SRC emacs-lisp
