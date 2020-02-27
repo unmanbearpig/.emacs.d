@@ -283,11 +283,6 @@
            "* TODO %?\n  %i\n  %a")))
 
    #+END_SRC
-** OX-bootstrap
-   #+BEGIN_SRC emacs-lisp
-(use-package ox-twbs)
-
-   #+END_SRC
 ** todo-keywords
    #+BEGIN_SRC emacs-lisp
    (setq org-todo-keywords
