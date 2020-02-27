@@ -90,8 +90,8 @@
 * Appearance
 ** Theme
    #+BEGIN_SRC emacs-lisp
-(if (display-graphic-p)
-    (load-theme 'ujelly t))
+;; (if (display-graphic-p)
+;;     (load-theme 'ujelly t))
    #+END_SRC
 ** Disable menu bar
    #+BEGIN_SRC emacs-lisp
