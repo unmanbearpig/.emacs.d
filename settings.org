@@ -103,7 +103,9 @@
    #+END_SRC
 ** Hide scroll bar
    #+BEGIN_SRC emacs-lisp
-(set-scroll-bar-mode nil)
+(if (fboundp 'set-scroll-bar-mode)
+  (set-scroll-bar-mode nil)
+)
    #+END_SRC
 ** Hide toolbar
    #+BEGIN_SRC emacs-lisp
