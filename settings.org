@@ -498,7 +498,10 @@
    #+BEGIN_SRC emacs-lisp
 (use-package ivy
   :diminish ivy-mode
-  :config (progn ivy-mode))
+  :config (progn
+            (ivy-mode)
+            (set-face-background 'ivy-current-match "#333333")
+            (set-face-foreground 'ivy-current-match "white")))
 (use-package counsel
   :diminish counsel-mode
   :bind (("M-x" . counsel-M-x)
