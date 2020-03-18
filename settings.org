@@ -838,6 +838,14 @@
 (define-key c-mode-map (kbd "\C-c \C-u") 'uncomment-region)
     #+end_src
 
+** Go
+   #+begin_src emacs-lisp
+(use-package 'go-mode)
+
+(define-key go-mode-map (kbd "C-c C-d") 'comment-region)
+(define-key go-mode-map (kbd "C-c C-u") 'uncomment-region)
+   #+end_src
+
 * Snippets
   #+BEGIN_SRC emacs-lisp
   (use-package yasnippet
