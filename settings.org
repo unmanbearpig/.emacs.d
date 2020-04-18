@@ -1015,7 +1015,10 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode)
-  :config (progn (setq flycheck-disabled-checkers nil)))
+  :config (progn
+            (setq flycheck-disabled-checkers nil)
+            (setq flycheck-reekrc ".reek.yml")
+            ))
   #+END_SRC
 * Flyspell
 ** Modes to enable in
