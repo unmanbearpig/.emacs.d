@@ -642,13 +642,6 @@
    #+end_src
 
 * Languages
-** Math
-   #+BEGIN_SRC emacs-lisp
-(use-package company-math
-  :config
-  (progn
-    (add-to-list 'company-backends 'company-math-symbols-unicode)))
-   #+END_SRC
 ** sass/scss
 #+BEGIN_SRC emacs-lisp
  (use-package sass-mode)
