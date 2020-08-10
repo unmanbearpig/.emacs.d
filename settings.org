@@ -801,16 +801,6 @@
    #+BEGIN_SRC emacs-lisp
    (use-package yaml-mode)
    #+END_SRC
-** Indent-tools
-   Useful for yaml editing
-
-   #+BEGIN_SRC emacs-lisp
-(use-package indent-tools
-  :config (progn
-            (add-hook 'yaml-mode-hook
-                      (lambda () (define-key yaml-mode-map (kbd "C-c >") 'indent-tools-hydra/body)))))
-
-   #+END_SRC
 ** Dockerfile
    #+BEGIN_SRC emacs-lisp
    (use-package dockerfile-mode)
