@@ -835,7 +835,7 @@
 
 ** Go
    #+begin_src emacs-lisp
-(use-package 'go-mode)
+(use-package go-mode)
 
 (define-key go-mode-map (kbd "C-c C-d") 'comment-region)
 (define-key go-mode-map (kbd "C-c C-u") 'uncomment-region)
