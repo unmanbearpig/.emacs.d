@@ -914,19 +914,6 @@
 (add-hook 'markdown-mode-hook 'turn-on-flyspell)
 (add-hook 'yaml-mode-hook 'turn-on-flyspell)
    #+END_SRC
-* Yafolding
-  #+BEGIN_SRC emacs-lisp
-(use-package yafolding
-  :config (progn (defhydra hydra-folding (global-map "C-x t")
-                   "Code folding"
-                   ("d" yafolding-hide-element)
-                   ("D" yafolding-hide-all)
-                   ("u" yafolding-show-element)
-                   ("U" yafolding-show-all)
-                   ("t" yafolding-toggle-element)
-                   ("T" yafolding-toggle-all)))
-  )
-  #+END_SRC
 * Region-state - show number of selected lines
   #+BEGIN_SRC emacs-lisp
 (use-package region-state
