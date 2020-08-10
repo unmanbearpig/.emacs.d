@@ -716,10 +716,6 @@
     #+END_SRC
 *** ruby-hash-syntax
 *** rubocop
-*** company-mode
-#+BEGIN_SRC emacs-lisp
-(add-hook 'ruby-mode-hook 'company-mode)
-#+END_SRC
 ** markdown
 *** markdown-mode
     #+BEGIN_SRC emacs-lisp
