@@ -679,7 +679,7 @@
 #+END_SRC
 
 ** rust
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC -emacs-lisp
    (use-package cargo
      :bind (("C-c , r" . cargo-process-test))
    )
