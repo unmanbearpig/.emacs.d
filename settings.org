@@ -60,11 +60,12 @@
            (lambda ()
              (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))))
    #+END_SRC
-** Backup files
+** Backup files -- disable auto-save
    Stolen from emacswiki
    [[https://www.emacswiki.org/emacs/BackupDirectory][EmacsWiki/BackupDirectory]]
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC -emacs-lisp
    (setq
+     make-backup-files nil
      backup-by-copying t      ; don't clobber symlinks
      backup-directory-alist
       '(("." . "~/.emacs-backups"))    ; don't litter my fs tree
@@ -73,6 +74,11 @@
      kept-old-versions 2
      version-control t)       ; use versioned backups
    #+END_SRC
+
+   #+begin_src emacs-lisp
+(setq auto-save-default nil)
+   #+end_src
+
 ** Subword mode
    #+BEGIN_SRC emacs-lisp
 (global-subword-mode t)
