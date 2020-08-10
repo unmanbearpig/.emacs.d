@@ -124,7 +124,7 @@
    #+END_SRC
 ** Set font
    #+BEGIN_SRC emacs-lisp
-   (set-frame-font "-*-Source Code Pro-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
+   (set-frame-font "-*-Iosevka-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
    #+END_SRC
 ** Show parens
    #+BEGIN_SRC emacs-lisp
