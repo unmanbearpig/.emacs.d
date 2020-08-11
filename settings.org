@@ -3,13 +3,10 @@
 * Load packages
 ** Package repositories
   #+BEGIN_SRC emacs-lisp
-  (package-initialize)
   (require 'package)
   (add-to-list 'package-archives
                '("melpa" . "https://melpa.org/packages/") t)
   (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
-  (package-initialize)
-
   (package-install 'use-package)
   (package-install 'hydra)
   #+END_SRC
