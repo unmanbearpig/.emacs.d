@@ -844,13 +844,11 @@
   #+END_SRC
 * web-mode + emmet + hippie expand
   #+BEGIN_SRC emacs-lisp
-(use-package smart-tab
-  :diminish smart-tab-mode
-  :config (progn
-            (setq smart-tab-using-hippie-expand t)
-            (add-hook 'prog-mode-hook 'smart-tab-mode)
-            (setq smart-tab-user-provided-completion-function nil);; 'company-complete)
-            ))
+ (add-to-list 'load-path (concat user-emacs-directory "packages/smart-tab"))
+ (require 'smart-tab)
+ (setq smart-tab-using-hippie-expand t)
+ (add-hook 'prog-mode-hook 'smart-tab-mode)
+ (setq smart-tab-user-provided-completion-function nil);; 'company-complete)
 
   (use-package hippie-exp
     :ensure nil
