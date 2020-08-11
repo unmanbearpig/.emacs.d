@@ -668,7 +668,7 @@
    #+END_SRC
 ** Emmet-mode
 #+BEGIN_SRC emacs-lisp
-(use-package emmet-mode)
+;; (use-package emmet-mode)
 
 (defun unmbp/emmet-expand-line-if-webish-mode (arg)
     (interactive "P")
