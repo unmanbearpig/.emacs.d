@@ -39,7 +39,6 @@
           (lambda ()
             (adaptive-wrap-prefix-mode)))
 
-
 ** Things I'm not sure I need any more
    #+BEGIN_SRC not-emacs-lisp
 (defadvice ansi-term (after advise-ansi-term-coding-system)
@@ -93,6 +92,10 @@
    #+BEGIN_SRC emacs-lisp
    (global-set-key (kbd "M-o") 'other-window)
    #+END_SRC
+** Electric indent
+   #+begin_src emacs-lisp
+(setq electric-indent-mode 't)
+   #+end_src
 * Appearance
 ** Theme
    #+BEGIN_SRC emacs-lisp
