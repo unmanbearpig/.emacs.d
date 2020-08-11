@@ -314,15 +314,15 @@
 * System Copy/Paste integration
   Needs xsel command in Linux
   #+BEGIN_SRC emacs-lisp
-(case system-type
-  ('darwin (unless window-system
+(cond
+  ((eq system-type 'darwin) (unless window-system
              (setq interprogram-cut-function
                    (lambda (text &optional push)
                      (let* ((process-connection-type nil)
                             (pbproxy (start-process "pbcopy" "pbcopy" "/usr/bin/pbcopy")))
                        (process-send-string pbproxy text)
                        (process-send-eof pbproxy))))))
-  ('gnu/linux (progn
+  ((eq system-type 'gnu/linux) (progn
                 (setq select-enable-clipboard t)
                 (defun xsel-cut-function (text &optional push)
                   (with-temp-buffer
