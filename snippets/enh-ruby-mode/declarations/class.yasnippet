@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: class
-# key: cla
-# --
-class ${1:`(ruby-class-name-from-current-buffer-name)`}${2:$(if (> (length yas-text) 0) " < " "")}${2:ParentClass}
-  $0
-end
