@@ -166,8 +166,8 @@ the text at point."
          (global-smart-tab-mode nil)
          (ev last-command-event)
          (triggering-key (cl-case (type-of ev)
-                           (string-to-number (char-to-string ev))
-                           (symbol (vector ev))))
+                           (('integer) (char-to-string ev))
+                           (('symbol) (vector ev))))
          (original-func (or (key-binding triggering-key)
                             (key-binding (lookup-key local-function-key-map
                                                      triggering-key))
