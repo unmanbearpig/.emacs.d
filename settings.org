@@ -211,11 +211,28 @@
   #+END_SRC
 ** Diminish
    #+BEGIN_SRC emacs-lisp
-(use-package diminish
-  :config (progn (diminish 'auto-revert-mode)
-                 (diminish 'company-mode)
-                 (diminish 'subword-mode)))
+(use-package diminish)
+(diminish 'auto-revert-mode)
+(diminish 'subword-mode)
+(diminish 'compilation-mode)
+(diminish 'rspec-compilation-mode)
    #+END_SRC
+** Mode line
+   #+BEGIN_SRC emacs-lisp
+(setq-default mode-line-format
+      '("%e"
+        mode-line-front-space
+        " "
+        mode-line-buffer-identification
+        " "
+        mode-line-position
+        mode-line-misc-info
+        (vc-mode vc-mode)
+        " "
+        mode-line-modes
+        mode-line-end-spaces))
+   #+END_SRC
+
 * Org mode
   #+BEGIN_SRC emacs-lisp
   (use-package org)
@@ -636,6 +653,7 @@
    #+begin_src emacs-lisp
 (use-package which-key)
 (which-key-mode)
+(diminish 'which-key-mode)
 (global-set-key (kbd "C-c h C-k") 'which-key-show-top-level)
    #+end_src
 
@@ -693,6 +711,7 @@
     #+BEGIN_SRC emacs-lisp
     (use-package inf-ruby)
     (use-package rspec-mode
+      :diminish
       :ensure t
       :config
       (progn
@@ -711,6 +730,7 @@
         (add-to-list 'auto-mode-alist '("capfile$" . ruby-mode))
         (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
         (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))))
+(diminish 'rspec-compilation-mode)
     #+END_SRC
 *** ruby-hash-syntax
 *** rubocop
@@ -849,6 +869,7 @@
   #+BEGIN_SRC emacs-lisp
  (add-to-list 'load-path (concat user-emacs-directory "packages/smart-tab"))
  (require 'smart-tab)
+ (diminish 'smart-tab-mode)
  (setq smart-tab-using-hippie-expand t)
  (add-hook 'prog-mode-hook 'smart-tab-mode)
  (setq smart-tab-user-provided-completion-function nil);; 'company-complete)
@@ -893,10 +914,10 @@
 ** exec-path-from-shell
 ** auto-indent-mode
 ** anzu
-** smart-mode-line
 * Flycheck
   #+BEGIN_SRC emacs-lisp
 (use-package flycheck
+  :diminish
   :ensure t
   :init (global-flycheck-mode)
   :config (progn
