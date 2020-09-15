@@ -233,6 +233,12 @@
         mode-line-end-spaces))
    #+END_SRC
 
+** Transient mark mode
+   It's slow in certain cases, like in c-mode for some reason.
+   I guess I might not need it that much
+   #+begin_src emacs-lisp
+(setq transient-mark-mode nil)
+   #+end_src
 * Performance
 ** Font lock
   #+begin_src emacs-lisp
