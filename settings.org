@@ -233,6 +233,11 @@
         mode-line-end-spaces))
    #+END_SRC
 
+* Performance
+** Font lock
+  #+begin_src emacs-lisp
+(setq font-lock-maximum-decoration '((t . 4) (c-mode . 2)))
+  #+end_src
 * Org mode
   #+BEGIN_SRC emacs-lisp
   (use-package org)
