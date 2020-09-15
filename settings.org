@@ -244,6 +244,12 @@
   #+begin_src emacs-lisp
 (setq font-lock-maximum-decoration '((t . 4) (c-mode . 2)))
   #+end_src
+** Next line
+not sure what it does, but probably makes C-p and C-n faster
+   #+begin_src emacs-lisp
+(setq auto-window-vscroll nil)
+   #+end_src
+
 * Org mode
   #+BEGIN_SRC emacs-lisp
   (use-package org)
