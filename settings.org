@@ -62,7 +62,7 @@
 ** Backup files -- disable auto-save
    Stolen from emacswiki
    [[https://www.emacswiki.org/emacs/BackupDirectory][EmacsWiki/BackupDirectory]]
-   #+BEGIN_SRC -emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (setq
      make-backup-files nil
      backup-by-copying t      ; don't clobber symlinks
