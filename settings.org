@@ -239,6 +239,17 @@
    #+begin_src emacs-lisp
 (setq transient-mark-mode nil)
    #+end_src
+* Cruft
+** auto-encryption mode
+#+begin_src emacs-lisp
+(setq auto-encryption-mode nil)
+#+end_src
+** electric-indent-mode
+It's useful but occasionally annoying
+#+begin_src emacs-lisp
+(setq electric-indent-mode nil)
+#+end_src
+
 * Performance
 ** Font lock
   #+begin_src emacs-lisp
