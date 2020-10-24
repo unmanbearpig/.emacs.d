@@ -738,10 +738,12 @@ not sure what it does, but probably makes C-p and C-n faster
 #+END_SRC
 
 ** rust
-   #+BEGIN_SRC -emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (use-package cargo
      :bind (("C-c , r" . cargo-process-test))
    )
+
+  (define-key rust-mode-map (kbd "C-c C-d") 'comment-region)
    #+END_SRC
 ** ruby
 *** inf-ruby
