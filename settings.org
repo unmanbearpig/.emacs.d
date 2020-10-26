@@ -742,8 +742,7 @@ not sure what it does, but probably makes C-p and C-n faster
    (use-package cargo
      :bind (("C-c , r" . cargo-process-test))
    )
-
-  (define-key rust-mode-map (kbd "C-c C-d") 'comment-region)
+  (use-package rust-mode :config (define-key rust-mode-map (kbd "C-c C-d") 'comment-region))
    #+END_SRC
 ** ruby
 *** inf-ruby
