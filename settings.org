@@ -254,6 +254,15 @@ It's useful but occasionally annoying
    #+begin_src emacs-lisp
 (setq mouse-wheel-mode nil)
    #+end_src
+** tool bar
+   #+begin_src emacs-lisp
+(setq tool-bar-mode nil)
+   #+end_src
+
+** tooltip
+   #+begin_src emacs-lisp
+(setq tooltip-mode nil)
+   #+end_src
 
 * Performance
 ** Font lock
