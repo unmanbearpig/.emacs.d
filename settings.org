@@ -250,6 +250,11 @@ It's useful but occasionally annoying
 (setq electric-indent-mode nil)
 #+end_src
 
+** mouse-wheel-mode
+   #+begin_src emacs-lisp
+(setq mouse-wheel-mode nil)
+   #+end_src
+
 * Performance
 ** Font lock
   #+begin_src emacs-lisp
