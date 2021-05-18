@@ -96,6 +96,12 @@
    #+begin_src emacs-lisp
 (setq electric-indent-mode 't)
    #+end_src
+** 80 columns
+#+begin_src emacs-lisp
+(setq fill-column 80)
+(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
+#+end_src
+
 * Appearance
 ** Theme
    #+BEGIN_SRC emacs-lisp
